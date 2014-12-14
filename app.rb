@@ -9,6 +9,8 @@ require_relative './models/pet.rb'
 require_relative './models/post.rb'
 # require_relative './config/environments'
 
+binding.pry
+
 enable :sessions
 
 
@@ -22,10 +24,24 @@ post '/login' do
 	user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect('/')
+    redirect('/:id')
   else
     @errors << "Invalid email or password. Try again!"
   end
+end
+
+get '/:user_name' do 
+	@username = params[:user_name]
+	user_id = User.find_by(user_name: @username).id
+	erb :profile
+end
+
+get '/users/:username' do
+	@username = params[:username] 
+	user_id = User.find_by(username: @username).id
+	@user_posts = Post.where(user_id: user_id)
+
+	return erb :userposts
 end
 
 
@@ -46,7 +62,14 @@ post '/signup' do
 
 end
 
+get "/:neighborhood" do 
+	@neighborhood = params[:neighborhood]
+
+
+	erb :neighborhood
+end
 
 
 
-# binding.pry
+
+
