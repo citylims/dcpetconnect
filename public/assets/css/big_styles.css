@@ -117,13 +117,13 @@ span {
 
 }
 /*ID Selectors*/
-div#page
+.page
 {
   margin: 0 auto 0 auto;
   width: 900px;
 
 }
-div#site_title
+.site_title
 {
   font-family: 'Roboto Condensed', serif;
   color: white;
@@ -141,29 +141,29 @@ div#site_title
 }
 
 /*Top Navigation Menu*/
-div#menu {
+.menu {
   margin-top: -75px;
   width: 700px;
 
 }
-div#menu li {
+.menu li {
   padding: 30px;
   display: inline;
 
 }
-div#menu ul a {
+.menu ul a {
   text-decoration: none;
   margin-left: 20px;
   text-align: center;
 
 }
-div#menu ul a:hover {
+.menu ul a:hover {
   text-decoration: underline;
 
 }
 
 /*Bio*/
-div#bio_frame {
+.bio_frame {
   width: 50%;
   margin: auto;
   margin-bottom: 10px;
@@ -173,7 +173,7 @@ div#bio_frame {
   background-color: black;
 
 }
-div#about {
+.about {
   margin: 0 auto ;
   width: 750px;
   height: 350px;

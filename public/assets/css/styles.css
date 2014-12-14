@@ -45,3 +45,7 @@
 	clear: both;
 	font-size: 30px;
 }
+
+li p {
+	color: red;
+}
