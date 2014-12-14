@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS pets;
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	user_name TEXT NOT NULL UNIQUE,
+	email TEXT NOT NULL UNIQUE,
+	password TEXT NOT NULL UNIQUE,
+	neighborhood TEXT,
+ );
+
+CREATE TABLE pets (
+	id SERIAL PRIMARY KEY,
+	pet_name TEXT NOT NULL,
+	type TEXT NOT NULL,
+	breed TEXT NOT NULL,
+	image TEXT	
+);
+
+CREATE TABLE posts (
+	id SERIAL PRIMARY KEY,
+	body VARCHAR(300) NOT NULL,
+	image TEXT,
+	user_id INTEGER NOT NULL	
+);
+
