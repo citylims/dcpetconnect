@@ -9,7 +9,7 @@ require_relative './models/pet.rb'
 require_relative './models/post.rb'
 # require_relative './config/environments'
 
-binding.pry
+# binding.pry
 
 enable :sessions
 
@@ -85,12 +85,17 @@ post '/signup' do
 
 end
 
-get "/:neighborhood" do 
-	@neighborhood = params[:neighborhood]
-
-
+get '/hoods' do 
+	@neighborhood = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle/Downtown DC", "Tacoma Park", "Shaw/Bloomingdale", "Tenley Town/Friendship Heights", "Petworth"]
 	erb :neighborhood
 end
+
+# get "/hoods/:neighborhood do 
+# 	@neighborhood = params[:neighborhood]
+
+
+# 	erb :neighborhood
+# end
 
 
 get "/session/logout" do

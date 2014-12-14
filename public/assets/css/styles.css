@@ -34,3 +34,14 @@
 	width 80%;
 	height: 50px;
 }
+
+.signup {
+	margin: auto;
+	text-align:  center;
+}
+
+.signup a {
+	display: block;
+	clear: both;
+	font-size: 30px;
+}

@@ -1,7 +1,8 @@
 /*Global selectors*/
 body {
   font-family: 'merriweather', Georgia, serif;
-  background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");
+  background-color: black;
+  /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
   background-size: cover;
   overflow-y: auto;
   overflow-x: hidden;
@@ -106,9 +107,10 @@ div#primary_content
   -webkit-box-shadow: 0px 0px 14px #000000;
   box-shadow: 0px 0px 14px #000000;
   /* OTHER */
-  /*background-color: red;*/
+  background-color: #FAEBD7;
   /*background-color: black;*/
-  background: url("http://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/03/wood_grain_2x4_beam_texture.jpg");
+  /*background: url("http://www.commentnation.com/backgrounds/images/green_seamless_paw_prints_with_black_background_wallpaper.gif");*/
+  /*background: url("http://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/03/wood_grain_2x4_beam_texture.jpg");*/
   /*background-color: rgba(0, 0, 0 .2);*/
   padding: 75px;
 
@@ -161,7 +163,7 @@ div#menu ul a:hover {
 }
 
 /*Bio*/
-div#bio_frame {
+div.bio_frame {
   width: 50%;
   margin: auto;
   margin-bottom: 10px;
@@ -217,7 +219,7 @@ img.bio_image{
   display: block;
   margin: auto;
   max-width: 400px;
-  max-height: 400px;
+  height: 400px;
 }
 p.caption {
   font-family: Tahoma, serif;
@@ -229,7 +231,7 @@ p.caption {
 
 }
 article.social_nav {
-  padding-top: 80px;
+margin-top: -50px;
 
 
 }
