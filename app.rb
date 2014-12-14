@@ -9,7 +9,7 @@ require_relative './models/pet.rb'
 require_relative './models/post.rb'
 # require_relative './config/environments'
 
-# binding.pry
+binding.pry
 
 enable :sessions
 
@@ -36,12 +36,26 @@ get '/users' do
 	erb :users
 end
 
-get '/:user_name' do 
-	@username = params[:user_name]
-	# user = User.find_by(user_name: @username)
-	erb :profile
+# get '/:user_name' do 
+# 	@username = params[:user_name]
+# 	# user = User.find_by(user_name: @username)
+# 	erb :profile
+# end
+
+get "/addpet" do
+
+	erb :addpet
 end
 
+post "/addpet" do
+	@pet_name = params[:pet_name]
+	@animal_type = params[:animal]
+	@breed = params[:breed]
+	@image = params[:image]
+	@user_id = session[:user_id]
+	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, user_id: @user_id)
+	redirect ('/')
+end
 
 
 get '/signup' do 
