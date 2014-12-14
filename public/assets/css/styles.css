@@ -46,6 +46,28 @@
 	font-size: 30px;
 }
 
+h2.page-title {
+  color: #FF6633;
+  font-family: 'Roboto Condensed', serif;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+  padding-top: 0px;
+  margin-top: 0px;
+  width: 1200px;
+}
+
 li p {
+	padding-left: 10px;
 	color: red;
+}
+
+.profile-header {
+	margin-top: -100px;
+}
+
+.profile-header a{
+	display: block;
+	text-align: center;
 }

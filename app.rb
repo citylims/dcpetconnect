@@ -86,16 +86,17 @@ post '/signup' do
 end
 
 get '/hoods' do 
-	@neighborhood = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle/Downtown DC", "Tacoma Park", "Shaw/Bloomingdale", "Tenley Town/Friendship Heights", "Petworth"]
-	erb :neighborhood
+	@hoods = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle/Downtown DC", "Tacoma Park", "Shaw/Bloomingdale", "Tenley Town/Friendship Heights", "Petworth"]
+	erb :hoods
 end
 
-# get "/hoods/:neighborhood do 
-# 	@neighborhood = params[:neighborhood]
+get "/hoods/:neighborhood" do 
+	@neighborhood = params[:neighborhood]
 
 
-# 	erb :neighborhood
-# end
+
+	erb :neighborhood
+end
 
 
 get "/session/logout" do

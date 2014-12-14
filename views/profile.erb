@@ -1,18 +1,28 @@
-<div class = "profile_container">
-<h2 class= "profile-name"> <%= @current.user_name %> </h2><h2 class="hood"><%= @current.neighborhood %></h2>
-
-
-<ul>
-	<% @current_pets.each do |pet| %>
-		<li>
-			<h3><%= pet.pet_name %></h3>
-			<h4><%= pet.animal %><h4>
-			<h4><%= pet.breed %></h4>
-			<img class ="pet-image" src="<%= pet.image %>">
-		</li>
-	<% end %>
-</ul>
-<a href="/addpet"> Add a pet!</a>
+<div class="page">
+	<div class="primary_content">
+	      <div class="menu">
+	        <ul>
+	          <li><span>01</span><a href="/users">USERS</a></li>
+	          <li><span>02</span><a href="#bio_frame">NEIGHBORHOODS</a></li>
+	          <li><span>03</span><a href="#bottom">CONNECT</a></li>
+	        </ul>
+	      </div>
+	<div class="profile-header">
+	<h2 class= "profile-name"> <%= @current.user_name %> </h2>
+	<h2 class="hood"><%= @current.neighborhood %></h2>
+	<a href="/addpet"> Add a pet!</a>
+	</div>
+		<ul>
+			<% @current_pets.each do |pet| %>
+				<li>
+					<h3><%= pet.pet_name %></h3>
+					<h4><%= pet.animal %><h4>
+					<h4><%= pet.breed %></h4>
+					<img class ="pet-image" src="<%= pet.image %>">
+				</li>
+			<% end %>
+		</ul>
+	</div>
 </div>
 
 
