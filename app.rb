@@ -39,6 +39,9 @@ end
 get '/users/:user_name' do 
 	@username = params[:user_name]		
 	@current = User.find_by(user_name: @username)
+	@current_id = @current.id
+	@current_pets = Pet.where(user_id: @current_id)
+
 	# @name = @current.user_name
 	erb :profile
 end

@@ -1,4 +1,17 @@
 <h2> <%= @current.user_name %> </h2>
 
+<h3>
+<ul>
+	<% @current_pets.each do |pet| %>
+	<li><%= pet.pet_name %></li>
+	<li><%= pet.animal %></li>
+	<li><%= pet.breed %></li>
+	<li><img href="<%= pet.image %>" height= "400" widht="400"></li>
+
+	<% end %>
+
+</ul>
+
 
 <a href="/addpet"> Add a pet!</a>
+
