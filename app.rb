@@ -1,41 +1,15 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pry'
-require 'pg'
-require 'active_record'
+
 
 # require 'sinatra/activerecord'
-# require_relative './models/user'
-# require_relative './models/pet'
-# require_relative './models/post'
+require_relative './models/user.rb'
+require_relative './models/pet.rb'
+require_relative './models/post.rb'
 # require_relative './config/environments'
 
-ActiveRecord::Base.logger = Logger.new(STDOUT)
-
-ActiveRecord::Base.establish_connection(
-	adapter: 'postgresql',
-	host: 'localhost',
-	database: 'dcpet_db'
-)
-
-
-class User < ActiveRecord::Base
-	validates_presence_of :user_name, :email, :password, presence: true
-	has_many :posts
-	has_many :pets
-
-end
-
-class Pet < ActiveRecord::Base
-	validates_presence_of :pet_name, :animal, :breed, presence: true 
-	belongs_to :user
-end
-
-class Post < ActiveRecord::Base
-	validates_presence_of :body, :user_id, presence: true
-	belongs_to :user
-
-end
+enable :sessions
 
 
 
@@ -45,8 +19,16 @@ get '/' do
 end
 
 post '/login' do 
-
+	user = User.find_by(email: params[:email])
+  if user && user.authenticate(params[:password])
+    session[:user_id] = user.id
+    redirect('/')
+  else
+    @errors << "Invalid email or password. Try again!"
+  end
 end
+
+
 
 get '/signup' do 
 
@@ -54,10 +36,17 @@ get '/signup' do
 end
 
 post '/signup' do
+	@user_name = params[:username]
+	@email = params[:email]
+	# @password = params[:password]
+	@password = BCrypt::Password.create(params[:password])
+	@neighborhood = params[:neighborhood]
+  User.create(user_name: @user_name, email: @email, password_digest: @password, neighborhood: @neighborhood)
+  redirect('/')
 
 end
 
 
 
 
-binding.pry
+# binding.pry
