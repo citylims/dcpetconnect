@@ -9,7 +9,7 @@ require_relative './models/pet.rb'
 require_relative './models/post.rb'
 # require_relative './config/environments'
 
-binding.pry
+# binding.pry
 
 enable :sessions
 
@@ -30,18 +30,16 @@ post '/login' do
   end
 end
 
-get '/:user_name' do 
-	@username = params[:user_name]
-	user_id = User.find_by(user_name: @username).id
-	erb :profile
+get '/users' do
+	@users = User.all
+	
+	erb :users
 end
 
-get '/users/:username' do
-	@username = params[:username] 
-	user_id = User.find_by(username: @username).id
-	@user_posts = Post.where(user_id: user_id)
-
-	return erb :userposts
+get 'users/:user_name' do 
+	@username = params[:user_name]
+	# user_id = User.find_by(user_name: @username).id
+	erb :profile
 end
 
 
