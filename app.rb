@@ -31,7 +31,7 @@ post '/login' do
 end
 
 get '/users' do
-	@users = User.all
+	@all_users = User.all
 	
 	erb :users
 end

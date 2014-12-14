@@ -1,15 +1,15 @@
-<h2> <%= @current.user_name %> </h2>
+<h2> <%= @current.user_name %> </h2><span class="neighborhood"><h2><%= @current.neighborhood %></h2></span>
 
-<h3>
+
 <ul>
 	<% @current_pets.each do |pet| %>
-	<li><%= pet.pet_name %></li>
-	<li><%= pet.animal %></li>
-	<li><%= pet.breed %></li>
-	<li><img href="<%= pet.image %>" height= "400" widht="400"></li>
-
+		<li>
+			<h3><%= pet.pet_name %></h3>
+			<h4><%= pet.animal %><h4>
+			<h4><%= pet.breed %></h4>
+			<img class ="pet_image" src="<%= pet.image %>">
+		</li>
 	<% end %>
-
 </ul>
 
 

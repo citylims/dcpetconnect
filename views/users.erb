@@ -1,8 +1,9 @@
 <h2> Users </h2>
 
 <ul>
-	<% @user.each do |user| %>
-	<li><%= @user.user_name %></li>
+	<% @all_users.each do |user| %>
+	<li><%= user.user_name %></li>
+	<a href="/users/<%= user.user_name %>">User Page</a>
 	<% end %>
 
 </ul>
