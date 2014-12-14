@@ -24,7 +24,7 @@ post '/login' do
 	user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect('/:id')
+    redirect('/users')
   else
     @errors << "Invalid email or password. Try again!"
   end
@@ -34,6 +34,13 @@ get '/users' do
 	@users = User.all
 	
 	erb :users
+end
+
+get '/users/:user_name' do 
+	@username = params[:user_name]		
+	@current = User.find_by(user_name: @username)
+	# @name = @current.user_name
+	erb :profile
 end
 
 # get '/:user_name' do 
@@ -82,6 +89,9 @@ get "/:neighborhood" do
 end
 
 
-
+get "/session/logout" do
+  session.clear
+  redirect('/')
+end
 
 
