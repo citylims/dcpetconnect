@@ -9,7 +9,7 @@ require_relative './models/pet.rb'
 require_relative './models/post.rb'
 # require_relative './config/environments'
 
-# binding.pry
+binding.pry
 
 enable :sessions
 
@@ -92,6 +92,7 @@ end
 
 get "/hoods/:neighborhood" do 
 	@neighborhood = params[:neighborhood]
+	@neighborhood_users = User.where(neighborhood: @neighborhood)
 
 
 
