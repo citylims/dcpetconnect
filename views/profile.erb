@@ -1,4 +1,5 @@
-<h2> <%= @current.user_name %> </h2><span class="neighborhood"><h2><%= @current.neighborhood %></h2></span>
+<div class = "profile_container">
+<h2 class= "profile-name"> <%= @current.user_name %> </h2><h2 class="hood"><%= @current.neighborhood %></h2>
 
 
 <ul>
@@ -7,11 +8,12 @@
 			<h3><%= pet.pet_name %></h3>
 			<h4><%= pet.animal %><h4>
 			<h4><%= pet.breed %></h4>
-			<img class ="pet_image" src="<%= pet.image %>">
+			<img class ="pet-image" src="<%= pet.image %>">
 		</li>
 	<% end %>
 </ul>
-
-
 <a href="/addpet"> Add a pet!</a>
+</div>
+
+
 

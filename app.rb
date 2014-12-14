@@ -16,6 +16,7 @@ enable :sessions
 
 
 get '/' do
+	@front_page_pet = Pet.pluck(:image)
 
 	erb :index
 end
