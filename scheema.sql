@@ -7,15 +7,16 @@ CREATE TABLE users (
 	user_name TEXT NOT NULL UNIQUE,
 	email TEXT NOT NULL UNIQUE,
 	password TEXT NOT NULL UNIQUE,
-	neighborhood TEXT,
+	neighborhood TEXT
  );
 
 CREATE TABLE pets (
 	id SERIAL PRIMARY KEY,
 	pet_name TEXT NOT NULL,
-	type TEXT NOT NULL,
+	animal TEXT NOT NULL,
 	breed TEXT NOT NULL,
-	image TEXT	
+	image TEXT,
+	user_id INTEGER NOT NULL	
 );
 
 CREATE TABLE posts (
