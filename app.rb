@@ -36,9 +36,9 @@ get '/users' do
 	erb :users
 end
 
-get 'users/:user_name' do 
+get '/:user_name' do 
 	@username = params[:user_name]
-	# user_id = User.find_by(user_name: @username).id
+	# user = User.find_by(user_name: @username)
 	erb :profile
 end
 
