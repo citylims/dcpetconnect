@@ -1,15 +1,16 @@
 require 'sinatra'
-require 'sinatra/reloader'
-require 'pry'
+require 'sinatra/activerecord'
 
+# require 'sinatra/reloader'
+# require 'pry'
 
 # require 'sinatra/activerecord'
-require_relative './models/user.rb'
-require_relative './models/pet.rb'
-require_relative './models/post.rb'
-# require_relative './config/environments'
+# require_relative './models/user.rb'
+# require_relative './models/pet.rb'
+# require_relative './models/post.rb'
+require_relative './config/environments'
 
-binding.pry
+# binding.pry
 
 enable :sessions
 
