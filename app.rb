@@ -5,10 +5,10 @@ require 'sinatra/activerecord'
 # require 'pry'
 
 # require 'sinatra/activerecord'
-# require_relative './models/user'
-# require_relative './models/pet'
-# require_relative './models/post'
-# require_relative './config/environments'
+require_relative './models/user'
+require_relative './models/pet'
+require_relative './models/post'
+require_relative './config/environments'
 
 # binding.pry
 
