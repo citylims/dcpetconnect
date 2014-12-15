@@ -1,5 +1,5 @@
 require 'bcrypt'
-require_relative "../db/connection"
+# require_relative "../db/connection"
 
 
 

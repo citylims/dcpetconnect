@@ -1,5 +1,5 @@
 
 development: 
   adapter: postgresql
-  database: dcpet_db
+  database: petconnect_db
   host: localhost
