@@ -1,0 +1,11 @@
+
+<ul>
+	<% @pet.each do |pet| %>
+			<li>
+				<h3><%= pet.pet_name %></h3></a>
+				<h4><%= pet.animal %><h4>
+				<h4><%= pet.breed %></h4>
+				<img class ="pet-image" src="<%= pet.image %>">
+			</li>
+	<% end %>
+</ul>

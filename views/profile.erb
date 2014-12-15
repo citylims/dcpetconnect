@@ -10,12 +10,14 @@
 	<div class="profile-header">
 	<h2 class= "profile-name"> <%= @current.user_name %> </h2>
 	<h2 class="hood"><%= @current.neighborhood %></h2>
-	<a href="/addpet"> Add a pet!</a>
+		<div class="signup">
+		<a href="/addpet"> Add a pet!</a>
+		</div>
 	</div>
 		<ul>
 			<% @current_pets.each do |pet| %>
 				<li>
-					<h3><%= pet.pet_name %></h3>
+					<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
 					<h4><%= pet.animal %><h4>
 					<h4><%= pet.breed %></h4>
 					<img class ="pet-image" src="<%= pet.image %>">

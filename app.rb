@@ -10,7 +10,7 @@ require_relative './models/pet'
 require_relative './models/post'
 require_relative './config/environments'
 
-# binding.pry
+binding.pry
 
 
 enable :sessions
@@ -49,11 +49,20 @@ get '/users/:user_name' do
 	erb :profile
 end
 
-# get '/:user_name' do 
-# 	@username = params[:user_name]
-# 	# user = User.find_by(user_name: @username)
-# 	erb :profile
-# end
+get '/pets' do
+
+	@total_pets = Pet.all 
+		
+
+	erb :petlist
+end
+
+get '/pets/:pet_name' do
+	@this_pet = params[:pet_name]
+ 	@pet = Pet.where(pet_name: @this_pet)
+
+ 	erb :petpage
+end	
 
 get "/addpet" do
 
@@ -116,6 +125,16 @@ get "/session/logout" do
   redirect('/')
 end
 
+get "/delete" do
+	@delete_id = session[:user_id]
+	@user = User.find_by(id: @delete_id)
+
+	erb :delete
+end
+
+delete "/delete_user" do
+
+end
 
 
 
