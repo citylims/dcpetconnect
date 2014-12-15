@@ -1,0 +1,5 @@
+
+development: 
+  adapter: postgresql
+  database: dcpet_db
+  host: localhost
