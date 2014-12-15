@@ -11,18 +11,13 @@
 	        </ul>
 	      </div>
 		<ul>
+		
 			<!-- users by hood -->
-		<ul> 
-			<% @neighborhood_users.each do |user| %>
-			<li>
-				<p><%= user.user_name %></p>
-			</li>
-			<% end %>
-		</ul>
 		<ul> 
 			<% @neighborhood_pets.each do |pet| %>
 			<li>
 				<p><%= pet.pet_name %></p>
+				<img class ="pet-image" src="<%= pet.image %>">
 			</li>
 			<% end %>
 		</ul>

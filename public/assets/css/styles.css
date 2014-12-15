@@ -1,6 +1,9 @@
 .pet-image {
   max-height: 200px;
   max-width: 200px;
+  border: 4px black;
+  border-radius: 20%
+
 }
 
 .profile_container {

@@ -10,14 +10,10 @@ require_relative './models/pet'
 require_relative './models/post'
 require_relative './config/environments'
 
-binding.pry
+# binding.pry
 
 
 enable :sessions
-
-
-
-
 
 
 get '/' do
@@ -91,18 +87,25 @@ post '/signup' do
 end
 
 get '/hoods' do 
-	@hoods = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle", "Shaw/Bloomingdale", "Tenleytown/Friendship Heights", "Petworth", "Takoma Park"]
+	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
 	erb :hoods
 end
 
 get "/hoods/:neighborhood" do 
+ 
+	@hoods=["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
+	@neighborhood = params[:neighborhood]
+
+	 	if @hoods.include?(@neighborhood)
+	# finding users who live in selected hood
 	@neighborhood = params[:neighborhood]
 	@neighborhood_users = User.where(neighborhood: @neighborhood)
-	@neighborhood_pets = Pets.where(user_id: @neighborhood_users)
-
-
-
-
+	# finding pets who live in selected hood
+	@neighborhood_users_ids = @neighborhood_users.pluck(:id)
+	@neighborhood_pets = Pet.where(user_id: @neighborhood_users)
+		else 
+			redirect('/')
+		end
 	erb :neighborhood
 end
 
@@ -111,5 +114,7 @@ get "/session/logout" do
   session.clear
   redirect('/')
 end
+
+
 
 
