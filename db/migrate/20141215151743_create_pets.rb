@@ -6,6 +6,7 @@ class CreatePets < ActiveRecord::Migration
   	  t.text :breed, null: false
   	  t.image :image
   	  t.belongs_to :user
+  	end
   end
 end
 
