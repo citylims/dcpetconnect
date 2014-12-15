@@ -65,7 +65,7 @@ post "/addpet" do
 	@image = params[:image]
 	@user_id = session[:user_id]
 	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, user_id: @user_id)
-	redirect ('/')
+	redirect ('/users/')
 end
 
 
