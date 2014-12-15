@@ -1,0 +1,54 @@
+
+<div class="page">
+    <div class="site_title">
+      <span>DC PET CONNECTION</span>
+    </div>
+    <div class="primary_content">
+      <div class="menu">
+        <ul>
+          <li><span>01</span><a href="/users">USERS</a></li>
+          <li><span>02</span><a href="/hoods">NEIGHBORHOODS</a></li>
+          <li><span>03</span><a href="/">CONNECT</a></li>
+        </ul>
+      </div>
+      <header>
+        <h1>DC Pet Connectd</h1>
+        <div class="bio_frame">
+          <div class= "home_photo">
+          </div>
+          <a href="#"><img class="bio_image" src="<%= @front_page_pet.sample %>" alt="Random_Pet" /></a>
+          <p class="caption">(This is "petname" from "neighborhood")</p>
+        </div>
+        <div class="about">
+          <div class="login">
+            <h2>Log In</h2>
+            <form action="/login" method = "post">
+              <legend>Email</legend>
+              <input type="text" placholder="email" name="email">
+              <legend>Password</legend>
+              <input type="password" placeholder="password" name="password">
+              <input class = "fs" type="submit" placeholder="Log In">
+            </form>
+          </div>
+          <a href= "/signup">Sign Up Page</a>
+			<a href="/session/logout">Logout</a>
+        </div>
+      </header>
+      <div class="bottom">
+        <article class="social_nav">
+          <h2>Follow Us!</h2>
+          <div class="social_icons">
+            <a href="https://www.facebook.com/CityLims"><img src="/assets/images/social/facebookicon.png" alt="icon"/></a>
+            <a href="https://plus.google.com/u/0/111232136562577808699/posts"><img src="/assets/images/social/googleicon.png" alt="icon"/></a>
+            <a href="https://www.linkedin.com/profile/view?id=286370662"><img src="/assets/images/social/linkedinicon.png" alt="icon"/></a>
+            <a href="https://twitter.com/CityLims"><img src="/assets/images/social/twittericon.png" alt="icon"/></a>
+            <a href="http://instagram.com/citylims"><img src="/assets/images/social/instagramicon.png" alt="icon"/></a>
+            <a href="mailto:citylims@gmail.com"><img src="/assets/images/social/emailicon.png" alt="icon"/></a>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="caption">Site Designed by Austin Formica 2014</p>
+    </div>
+  </div>
