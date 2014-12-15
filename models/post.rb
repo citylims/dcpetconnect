@@ -1,4 +1,4 @@
-require_relative "../db/connection"
+
 
 
 class Post < ActiveRecord::Base

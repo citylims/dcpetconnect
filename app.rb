@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-
+require 'bcrypt'
 # require 'sinatra/reloader'
-# require 'pry'
+require 'pry'
 
 # require 'sinatra/activerecord'
 require_relative './models/user'
@@ -10,9 +10,13 @@ require_relative './models/pet'
 require_relative './models/post'
 require_relative './config/environments'
 
-# binding.pry
+binding.pry
+
 
 enable :sessions
+
+
+
 
 
 
@@ -66,7 +70,7 @@ post "/addpet" do
 	@image = params[:image]
 	@user_id = session[:user_id]
 	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, user_id: @user_id)
-	redirect ('/users/')
+	redirect ('/users')
 end
 
 
@@ -87,13 +91,15 @@ post '/signup' do
 end
 
 get '/hoods' do 
-	@hoods = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle/Downtown DC", "Tacoma Park", "Shaw/Bloomingdale", "Tenley Town/Friendship Heights", "Petworth"]
+	@hoods = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle", "Shaw/Bloomingdale", "Tenleytown/Friendship Heights", "Petworth", "Takoma Park"]
 	erb :hoods
 end
 
 get "/hoods/:neighborhood" do 
 	@neighborhood = params[:neighborhood]
 	@neighborhood_users = User.where(neighborhood: @neighborhood)
+	@neighborhood_pets = Pets.where(user_id: @neighborhood_users)
+
 
 
 
