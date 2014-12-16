@@ -5,6 +5,7 @@
 				<h4><%= pet.animal %><h4>
 				<h4><%= pet.breed %></h4>
 				<img class ="pet-image" src="<%= pet.image %>">
+				<% if session[:user_id] == pet.user_id %>
 				<div>
 					<form action="/update_pet/<%= pet.pet_name %>" method = "post">
 						<input type="hidden" value ="put" name="_method">
@@ -22,6 +23,8 @@
 						<input class = "fs" type="submit" placeholder="delete">
 					</form>
 				</div>
+				<% else %>
+				<% end %>
 			</li>
 	<% end %>
 </ul>

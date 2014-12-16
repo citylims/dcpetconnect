@@ -10,10 +10,13 @@
 	<div class="profile-header">
 	<h2 class= "profile-name"> <%= @current.user_name.capitalize %> </h2>
 	<h2 class="profile-hood"><%= @current.neighborhood %></h2>
+	<% if session[:user_id] == @current_id %>
 		<div class="signup">
 		<a href="/addpet"> Add a pet!</a>
 		<a href="/addpost">Create a post!</a> 
 		</div>
+	<% else %>
+	<% end %>
 	</div>
 		<ul>
 			<% @current_pets.each do |pet| %>
