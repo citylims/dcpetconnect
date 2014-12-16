@@ -31,12 +31,16 @@ get '/' do
 	erb :index
 end
 
+post "/search" do 
+
+end
 
 post '/login' do 
 	user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect('/users')
+    @login_user = 
+    redirect('/users/')
   else
     @errors << "Invalid email or password. Try again!"
   end

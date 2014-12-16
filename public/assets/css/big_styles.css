@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 
 }
-header {
+section {
   text-align: center; /*to center form*/
   position: relative;
   display: block;
