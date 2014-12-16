@@ -60,6 +60,16 @@ post '/signup' do
 
 end
 
+get "/addpost" do
+
+	erb :addpost
+end
+
+
+post "/addpost" do
+	
+end
+
 
 get '/users' do
 	@all_users = User.all
@@ -87,12 +97,18 @@ get "/delete" do
 end
 
 
-post "/delete_user" do 
+put "/delete" do 
 	@user_id = params[:user_to_delete]
 	@deletion = User.find(@user_id)
 	@deletion.destroy
 	redirect('/')
 end
+
+# user.destroy
+# User.find(15).destroy
+# User.destroy(15)
+# User.where(:age => 15).destroy_all
+# User.destroy_all(:age => 15)
 
 
 get "/session/logout" do
