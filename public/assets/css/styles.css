@@ -25,11 +25,11 @@
 }
 
 .profile-name {
-	/*color: black*/
+	color: black
 }
-.hood {
+.profile-hood {
 	margin-top: -80px;
-	/*color: black;*/
+	color: black;
 }
 
 .site-title {
@@ -64,6 +64,10 @@ h2.page-title {
 li p {
 	padding-left: 10px;
 	color: red;
+}
+
+h3 {
+
 }
 
 .profile-header {

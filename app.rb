@@ -61,13 +61,17 @@ post '/signup' do
 end
 
 get "/addpost" do
-
+	@current = User.find(session[:user_id])
 	erb :addpost
 end
 
 
+
 post "/addpost" do
-	
+	@user_id = session[:user_id]
+	@new_post = params[:new_post]
+	@post_image = params[:post_image]
+	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
 end
 
 
@@ -97,11 +101,14 @@ get "/delete" do
 end
 
 
-put "/delete" do 
+delete "/delete" do 
 	@user_id = params[:user_to_delete]
 	@deletion = User.find(@user_id)
-	@deletion.destroy
+	if @deletion.destroy
 	redirect('/')
+	else
+		puts "not working"
+	end
 end
 
 # user.destroy

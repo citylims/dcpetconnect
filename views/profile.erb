@@ -8,10 +8,10 @@
 	        </ul>
 	      </div>
 	<div class="profile-header">
-	<h2 class= "profile-name"> <%= @current.user_name %> </h2>
-	<h2 class="hood"><%= @current.neighborhood %></h2>
+	<h2 class= "profile-name"> <%= @current.user_name.capitalize %> </h2>
+	<h2 class="profile-hood"><%= @current.neighborhood %></h2>
 		<div class="signup">
-		<a href="/addpet">Add a pet!</a>
+		<a href="/addpet"> Add a pet!</a>
 		<a href="/addpost">Create a post!</a> 
 		</div>
 	</div>
