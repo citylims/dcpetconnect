@@ -140,12 +140,22 @@ post "/delete_user" do
 end
 
 put "/update_pet/:pet_name" do 
-	update_pet_name = params[:pet_name]
-	update_pet = Pet.find_by(pet_name: update_pet_name)
-	new_image = params[:new_image]
-	update_pet.image = new_image
-	update_pet.save
-	redirect('/')
+	 current_user = session[:user_id]
+	 user = User.find(current_user)
+	 current_user_pets = user.pets
+	 current_pets = current_user_pets.pluck(:pet_name)
+	 update_pet_name = params[:pet_name]
+
+		 if current_pets.include?(update_pet_name)
+		update_pet_name = params[:pet_name]
+		update_pet = Pet.find_by(pet_name: update_pet_name)
+		new_image = params[:new_image]
+		update_pet.image = new_image
+		update_pet.save
+		redirect('/pets')
+		else
+		redirect('/')
+	end
 end
 
 
