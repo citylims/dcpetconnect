@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 20141215153828) do
   end
 
   create_table "users", force: true do |t|
-    t.text "user_name",       null: false
-    t.text "email",           null: false
-    t.text "password_digest", null: false
-    t.text "neighborhood",    null: false
+    t.text     "user_name",       null: false
+    t.text     "email",           null: false
+    t.text     "password_digest", null: false
+    t.text     "neighborhood",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
