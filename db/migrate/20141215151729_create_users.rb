@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
   	  t.text :email, null: false
   	  t.text :password_digest, null: false
   	  t.text :neighborhood, null: false
+  	  t.timestamp
   	end
   end
 end

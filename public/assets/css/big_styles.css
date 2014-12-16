@@ -1,8 +1,9 @@
 /*Global selectors*/
 body {
   font-family: 'merriweather', Georgia, serif;
-  background-color: white;
-  /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
+/*  background-color: white;*/
+  /*background: url("http://williambeem.com/wp-content/uploads/2012/08/Overlooking-DC.jpg");*/
+  background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");
   background-size: cover;
   overflow-y: auto;
   overflow-x: hidden;

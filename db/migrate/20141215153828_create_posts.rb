@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
   	  t.text :body, null: false
   	  t.text :image
   	  t.belongs_to :user
+  	  t.timestamp
   	end
   end
 end
