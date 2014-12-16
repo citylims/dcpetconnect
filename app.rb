@@ -132,9 +132,24 @@ get "/delete" do
 	erb :delete
 end
 
-delete "/delete_user" do
-
+post "/delete_user" do 
+	@user_id = params[:user_to_delete]
+	@deletion = User.find(@user_id)
+	@deletion.destroy
+	redirect('/')
 end
+
+put "/update_pet/:pet_name" do 
+	update_pet_name = params[:pet_name]
+	update_pet = Pet.find_by(pet_name: update_pet_name)
+	new_image = params[:new_image]
+	update_pet.image = new_image
+	update_pet.save
+	redirect('/')
+end
+
+
+
 
 
 

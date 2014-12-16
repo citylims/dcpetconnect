@@ -1,1 +1,6 @@
-<h1><%= @user.user_name %></h1>
+<h1><%= @user.id %></h1>
+
+<form action="/delete_user" method="delete">
+	<input type="hidden" value="<%= @user.id %>" name="user_to_delete">
+	<input type="submit" value="delete_user">
+</form>
