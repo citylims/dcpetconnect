@@ -15,6 +15,21 @@ binding.pry
 
 enable :sessions
 
+helpers do
+	def current_user
+		@current_user || nil
+	end
+
+	def current_user?
+		@current_user == nil ? false : true
+	end
+end
+
+before do
+	@errors ||= []
+	@current_user = User.find_by(id: session[:user_id])
+end
+
 
 #USER ROUTES
 
@@ -40,7 +55,7 @@ post '/login' do
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
     @login_user = 
-    redirect('/users/')
+    redirect('/users')
   else
     @errors << "Invalid email or password. Try again!"
   end
@@ -184,6 +199,11 @@ put "/update_pet/:pet_name" do
 	end
 end
 
+
+get "/search" do 
+
+	erb :search
+end
 
 
 #HOODS ROUTES
