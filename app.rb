@@ -199,6 +199,16 @@ put "/update_pet/:pet_name" do
 	end
 end
 
+delete "/delete_pet" do 
+	@pet_id = params[:pet_to_delete]
+	@deletion_pet = Pet.find(@pet_id)
+	if @deletion_pet.delete
+	redirect('/')
+	else
+		puts "not working"
+	end
+end
+
 
 get "/search" do 
 
