@@ -25,6 +25,14 @@
 				</li>
 			<% end %>
 		</ul>
+		<ul>
+			<% @current_posts.each do |post| %>
+				<li>
+					<h3><%= post.body %></h3>
+					<img class ="pet-image" src="<%= post.image %>">
+				</li>
+			<% end %>
+		</ul>
 	</div>
 </div>
 

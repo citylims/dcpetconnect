@@ -44,9 +44,12 @@
 }
 
 .signup a {
+  margin: auto;
 	display: block;
 	clear: both;
 	font-size: 30px;
+  max-width: 200px;
+
 }
 
 h2.page-title {
