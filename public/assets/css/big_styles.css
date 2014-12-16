@@ -1,7 +1,7 @@
 /*Global selectors*/
 body {
   font-family: 'merriweather', Georgia, serif;
-  background-color: black;
+  background-color: white;
   /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
   background-size: cover;
   overflow-y: auto;
@@ -107,8 +107,8 @@ span {
   -webkit-box-shadow: 0px 0px 14px #000000;
   box-shadow: 0px 0px 14px #000000;
   /* OTHER */
-  background-color: #F1ECE7;
-  /*background-color: black;*/
+  /*background-color: #F1ECE7;*/
+  background-color: white;
   /*background: url("http://www.commentnation.com/backgrounds/images/green_seamless_paw_prints_with_black_background_wallpaper.gif");*/
   /*background: url("http://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/03/wood_grain_2x4_beam_texture.jpg");*/
   /*background-color: rgba(0, 0, 0 .2);*/

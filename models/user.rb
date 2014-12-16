@@ -1,11 +1,10 @@
-require 'bcrypt'
-require_relative "../db/connection"
+
 
 
 
 
 class User < ActiveRecord::Base
-	validates_presence_of :user_name, :email, :password_digest, presence: true
+	# validates_presence_of :user_name, :email, :password_digest, presence: true
 	has_many :posts
 	has_many :pets
 
@@ -17,5 +16,4 @@ class User < ActiveRecord::Base
 			return false
 		end
 	end
-
 end

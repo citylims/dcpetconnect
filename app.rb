@@ -1,22 +1,24 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/activerecord'
+require 'bcrypt'
+# require 'sinatra/reloader'
 require 'pry'
 
-
 # require 'sinatra/activerecord'
-require_relative './models/user.rb'
-require_relative './models/pet.rb'
-require_relative './models/post.rb'
-# require_relative './config/environments'
+require_relative './models/user'
+require_relative './models/pet'
+require_relative './models/post'
+require_relative './config/environments'
 
 binding.pry
+
 
 enable :sessions
 
 
-
 get '/' do
 	@front_page_pet = Pet.pluck(:image)
+	@selected_pet = @front_page_pet.sample
 
 	erb :index
 end
@@ -47,11 +49,20 @@ get '/users/:user_name' do
 	erb :profile
 end
 
-# get '/:user_name' do 
-# 	@username = params[:user_name]
-# 	# user = User.find_by(user_name: @username)
-# 	erb :profile
-# end
+get '/pets' do
+
+	@total_pets = Pet.all 
+		
+
+	erb :petlist
+end
+
+get '/pets/:pet_name' do
+	@this_pet = params[:pet_name]
+ 	@pet = Pet.where(pet_name: @this_pet)
+
+ 	erb :petpage
+end	
 
 get "/addpet" do
 
@@ -65,7 +76,7 @@ post "/addpet" do
 	@image = params[:image]
 	@user_id = session[:user_id]
 	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, user_id: @user_id)
-	redirect ('/users/')
+	redirect ('/users')
 end
 
 
@@ -86,16 +97,25 @@ post '/signup' do
 end
 
 get '/hoods' do 
-	@hoods = ["Capitol Hill", "Cleveland/Woodley Park", "Gloverpark/Georgetown", "Mt. Pleasant/Columbia Heights", "Dupont Circle/Downtown DC", "Tacoma Park", "Shaw/Bloomingdale", "Tenley Town/Friendship Heights", "Petworth"]
+	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
 	erb :hoods
 end
 
 get "/hoods/:neighborhood" do 
+ 
+	@hoods=["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
+	@neighborhood = params[:neighborhood]
+
+	 	if @hoods.include?(@neighborhood)
+	# finding users who live in selected hood
 	@neighborhood = params[:neighborhood]
 	@neighborhood_users = User.where(neighborhood: @neighborhood)
-
-
-
+	# finding pets who live in selected hood
+	@neighborhood_users_ids = @neighborhood_users.pluck(:id)
+	@neighborhood_pets = Pet.where(user_id: @neighborhood_users)
+		else 
+			redirect('/')
+		end
 	erb :neighborhood
 end
 
@@ -104,5 +124,17 @@ get "/session/logout" do
   session.clear
   redirect('/')
 end
+
+get "/delete" do
+	@delete_id = session[:user_id]
+	@user = User.find_by(id: @delete_id)
+
+	erb :delete
+end
+
+delete "/delete_user" do
+
+end
+
 
 

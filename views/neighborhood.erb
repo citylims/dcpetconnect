@@ -1,14 +1,28 @@
-<h2><%= @neighborhood %></h2>
-
-<ul> 
-	<% @neighborhood_users.each do |user| %>
-	<li>
-		<p><%= user.user_name %></p>
-	</li>
-	<% end %>
-</ul>
-
-
+<div class="page">
+	<div class="site_title">
+      <span>DC PET CONNECTION - <%= @neighborhood %></span>
+    </div>
+	<div class="primary_content">
+	      <div class="menu">
+	        <ul>
+	          <li><span>01</span><a href="/users">USERS</a></li>
+	          <li><span>02</span><a href="/hoods">NEIGHBORHOODS</a></li>
+	          <li><span>03</span><a href="/">CONNECT</a></li>
+	        </ul>
+	      </div>
+		<ul>
+		
+			<!-- users by hood -->
+		<ul> 
+			<% @neighborhood_pets.each do |pet| %>
+			<li>
+				<p><%= pet.pet_name %></p>
+				<img class ="pet-image" src="<%= pet.image %>">
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
 
 
 

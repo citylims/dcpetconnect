@@ -1,6 +1,9 @@
 .pet-image {
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 400px;
+  max-width: 400px;
+  border: 4px black;
+  border-radius: 10%
+
 }
 
 .profile_container {
@@ -70,4 +73,8 @@ li p {
 .profile-header a{
 	display: block;
 	text-align: center;
+}
+
+.list-display {
+	color :yellow;
 }

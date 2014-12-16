@@ -1,9 +1,22 @@
-<h2> Users </h2>
-
-<ul>
-	<% @all_users.each do |user| %>
-	<li><p><%= user.user_name %><p></li>
-	<a href="/users/<%= user.user_name %>">User Page</a>
-	<% end %>
-
-</ul>
+<div class="page">
+	<div class="site_title">
+      <span>DC PET CONNECTION - Users</span>
+    </div>
+	<div class="primary_content">
+	      <div class="menu">
+	        <ul>
+	          <li><span>01</span><a href="/users">USERS</a></li>
+	          <li><span>02</span><a href="/hoods">NEIGHBORHOODS</a></li>
+	          <li><span>03</span><a href="/">CONNECT</a></li>
+	        </ul>
+	      </div>
+	      <div class="list-display">
+			<ul>
+				<% @all_users.each do |user| %>
+				<li><p><%= user.user_name %><p></li>
+				<a href="/users/<%= user.user_name %>">User Page</a>
+				<% end %>
+			</ul>
+		  </div>
+	</div>
+</div>
