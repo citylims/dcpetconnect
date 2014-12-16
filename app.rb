@@ -16,12 +16,15 @@ binding.pry
 enable :sessions
 
 
+#USER ROUTES
+
 get '/' do
 	@front_page_pet = Pet.pluck(:image)
 	@selected_pet = @front_page_pet.sample
 
 	erb :index
 end
+
 
 post '/login' do 
 	user = User.find_by(email: params[:email])
@@ -33,11 +36,31 @@ post '/login' do
   end
 end
 
+
+get '/signup' do 
+
+	erb :signup
+end
+
+
+post '/signup' do
+	@user_name = params[:username]
+	@email = params[:email]
+	# @password = params[:password]
+	@password = BCrypt::Password.create(params[:password])
+	@neighborhood = params[:neighborhood]
+  User.create(user_name: @user_name, email: @email, password_digest: @password, neighborhood: @neighborhood)
+  redirect('/')
+
+end
+
+
 get '/users' do
 	@all_users = User.all
 	
 	erb :users
 end
+
 
 get '/users/:user_name' do 
 	@username = params[:user_name]		
@@ -49,6 +72,32 @@ get '/users/:user_name' do
 	erb :profile
 end
 
+
+get "/delete" do
+	@delete_id = session[:user_id]
+	@user = User.find_by(id: @delete_id)
+
+	erb :delete
+end
+
+
+post "/delete_user" do 
+	@user_id = params[:user_to_delete]
+	@deletion = User.find(@user_id)
+	@deletion.destroy
+	redirect('/')
+end
+
+
+get "/session/logout" do
+  session.clear
+  redirect('/')
+end
+
+
+
+#PETS ROUTES
+
 get '/pets' do
 
 	@total_pets = Pet.all 
@@ -57,6 +106,7 @@ get '/pets' do
 	erb :petlist
 end
 
+
 get '/pets/:pet_name' do
 	@this_pet = params[:pet_name]
  	@pet = Pet.where(pet_name: @this_pet)
@@ -64,10 +114,12 @@ get '/pets/:pet_name' do
  	erb :petpage
 end	
 
+
 get "/addpet" do
 
 	erb :addpet
 end
+
 
 post "/addpet" do
 	@pet_name = params[:pet_name]
@@ -80,21 +132,28 @@ post "/addpet" do
 end
 
 
-get '/signup' do 
+put "/update_pet/:pet_name" do 
+	 current_user = session[:user_id]
+	 user = User.find(current_user)
+	 current_user_pets = user.pets
+	 current_pets = current_user_pets.pluck(:pet_name)
+	 update_pet_name = params[:pet_name]
 
-	erb :signup
+		 if current_pets.include?(update_pet_name)
+		update_pet_name = params[:pet_name]
+		update_pet = Pet.find_by(pet_name: update_pet_name)
+		new_image = params[:new_image]
+		update_pet.image = new_image
+		update_pet.save
+		redirect('/pets')
+		else
+		redirect('/')
+	end
 end
 
-post '/signup' do
-	@user_name = params[:username]
-	@email = params[:email]
-	# @password = params[:password]
-	@password = BCrypt::Password.create(params[:password])
-	@neighborhood = params[:neighborhood]
-  User.create(user_name: @user_name, email: @email, password_digest: @password, neighborhood: @neighborhood)
-  redirect('/')
 
-end
+
+#HOODS ROUTES
 
 get '/hoods' do 
 	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
@@ -120,43 +179,10 @@ get "/hoods/:neighborhood" do
 end
 
 
-get "/session/logout" do
-  session.clear
-  redirect('/')
-end
 
-get "/delete" do
-	@delete_id = session[:user_id]
-	@user = User.find_by(id: @delete_id)
 
-	erb :delete
-end
 
-post "/delete_user" do 
-	@user_id = params[:user_to_delete]
-	@deletion = User.find(@user_id)
-	@deletion.destroy
-	redirect('/')
-end
 
-put "/update_pet/:pet_name" do 
-	 current_user = session[:user_id]
-	 user = User.find(current_user)
-	 current_user_pets = user.pets
-	 current_pets = current_user_pets.pluck(:pet_name)
-	 update_pet_name = params[:pet_name]
-
-		 if current_pets.include?(update_pet_name)
-		update_pet_name = params[:pet_name]
-		update_pet = Pet.find_by(pet_name: update_pet_name)
-		new_image = params[:new_image]
-		update_pet.image = new_image
-		update_pet.save
-		redirect('/pets')
-		else
-		redirect('/')
-	end
-end
 
 
 
