@@ -1,47 +1,63 @@
 <div class="page">
 	<div class="primary_content">
-	      <div class="menu">
+	    <div class="menu">
 	        <ul>
 	          <li><span>01</span><a href="/users">USERS</a></li>
 	          <li><span>02</span><a href="/hoods">NEIGHBORHOODS</a></li>
 	          <li><span>03</span><a href="/">CONNECT</a></li>
 	        </ul>
-	      </div>
-	<div class="profile-header">
-	<h2 class= "profile-name"> <%= @current.user_name.capitalize %> </h2>
-	<h2 class="profile-hood"><%= @current.neighborhood %></h2>
-	<% if session[:user_id] == @current_id %>
-		<div class="signup">
-		<a href="/addpet"> Add a pet!</a>
-		<a href="/addpost">Create a post!</a>
-		<h2><a href="/delete">Delete Account!</a><h2> 
-		</div>
-	<% else %>
-	<% end %>
-	</div>
-		<ul>
-			<% @current_pets.each do |pet| %>
-				<li>
-					<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
-					<h4><%= pet.animal %><h4>
-					<h4><%= pet.breed %></h4>
-					<img class ="pet-image" src="<%= pet.image %>">
-				</li>
+	    </div>
+		<div class="profile-header">
+			<h2 class= "profile-name"><%= @current.user_name.capitalize %></h2>
+			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
+			<% if session[:user_id] == @current_id %>
+				<div class="signup">
+					<a href="/addpet"> Add a pet!</a>
+					<a href="/addpost">Create a post!</a>
+					<h2><a href="/delete">Delete Account!</a><h2> 
+				</div>
+			<% else %>
 			<% end %>
-		</ul>
-		<ul>
+		</div>
+		<div class ="profile-pets">
+			<ul>
+				<% @current_pets.each do |pet| %>
+					<li>
+						<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
+						<h4><%= pet.animal %><h4>
+						<h4><%= pet.breed %></h4>
+						<img class ="pet-image" src="<%= pet.image %>">
+					</li>
+				<% end %>
+			</ul>
+		</div>
+		<div class ="profile-posts">
+			<ul>
 			<% @current_posts.each do |post| %>
 				<li>
 					<h3><%= post.body %></h3>
-					<img class ="pet-image" src="<%= post.image %>">
 					<p><%= post.created_at %></p>
+					<img class ="pet-image" src="<%= post.image %>">
+						<% post.comments.each do |comment| %>
+						<% user = User.find(comment.user_id) %>
+							<p><%= user.user_name.capitalize %></p>
+							<p><%= comment.body %></p>
+							<p><%= comment.created_at %></p>
+						<% end %>
+					<form action="/addcomment" method = "post">
+					  <legend>Comment</legend>
+					  <input type="hidden" value="<%= post.id %>" name="post_id">
+					  <input type="text" placholder="Comment..." name="comment"></textarea>
+					  <input class = "fs" type="submit" placeholder="Create">
+					</form>
 					<% if session[:user_id] == @current_id %>
 					<a href="/posts/<%= post.id %>">delete post</a>
 					<% else %>
 					<% end %>
 				</li>
 			<% end %>
-		</ul>
+			</ul>
+		</div>
 	</div>
 </div>
 
