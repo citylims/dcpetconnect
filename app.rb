@@ -8,6 +8,7 @@ require 'pry'
 require_relative './models/user'
 require_relative './models/pet'
 require_relative './models/post'
+require_relative './models/comment'
 require_relative './config/environments'
 
 binding.pry
@@ -285,12 +286,22 @@ end
 
 
 
+#Comments 
 
+post '/addcomment' do 
+	@user_id = session[:user_id]
+	@post_id = params[:post_id]
+	@comment_body = params[:comment]
+	@new_comment = Comment.create(body: @comment_body, user_id: @user_id, post_id: @post_id)
+	redirect('/')
 
+end
 
-
-
-
-
-
+post "/addpost" do
+	@user_id = session[:user_id]
+	@new_post = params[:new_post]
+	@post_image = params[:post_image]
+	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
+	redirect('/')
+end
 
