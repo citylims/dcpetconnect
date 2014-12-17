@@ -58,7 +58,7 @@ post '/login' do
     @login_user = 
     redirect('/users')
   else
-    @errors << "Invalid email or password. Try again!"
+   redirect('/404')
   end
 end
 

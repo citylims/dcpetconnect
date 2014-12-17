@@ -13,7 +13,7 @@
 	      <div class="list-display">
 			<ul>
 				<% @all_users.each do |user| %>
-				<li><p><%= user.user_name %><p></li>
+				<li><p><%= user.user_name.capitalize %><p></li>
 				<a href="/users/<%= user.user_name %>">User Page</a>
 				<% end %>
 			</ul>
