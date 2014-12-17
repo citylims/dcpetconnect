@@ -13,7 +13,8 @@
 	<% if session[:user_id] == @current_id %>
 		<div class="signup">
 		<a href="/addpet"> Add a pet!</a>
-		<a href="/addpost">Create a post!</a> 
+		<a href="/addpost">Create a post!</a>
+		<h2><a href="/delete">Delete Account!</a><h2> 
 		</div>
 	<% else %>
 	<% end %>
@@ -33,6 +34,11 @@
 				<li>
 					<h3><%= post.body %></h3>
 					<img class ="pet-image" src="<%= post.image %>">
+					<p><%= post.created_at %></p>
+					<% if session[:user_id] == @current_id %>
+					<a href="/posts/<%= post.id %>">delete post</a>
+					<% else %>
+					<% end %>
 				</li>
 			<% end %>
 		</ul>

@@ -37,14 +37,15 @@ get '/' do
 	@front_page_pet = Pet.pluck(:image)
 	@selected_pet = @front_page_pet.sample
 	pet = Pet.find_by(image: @selected_pet)
-	# owner = pet.user_id
-	# pet_owner = User.find(owner)
-	# @pet_hood = pet_owner.neighborhood
-	# @front_pet = pet.pet_name
+	owner = pet.user_id
+	pet_owner = User.find(owner)
+	@pet_hood = pet_owner.neighborhood
+	@front_pet = pet.pet_name
 
 
 	erb :index
 end
+
 
 post "/search" do 
 
@@ -76,8 +77,8 @@ post '/signup' do
 	@neighborhood = params[:neighborhood]
   User.create(user_name: @user_name, email: @email, password_digest: @password, neighborhood: @neighborhood)
   redirect('/')
-
 end
+
 
 get "/addpost" do
 	@current = User.find(session[:user_id])
@@ -85,12 +86,58 @@ get "/addpost" do
 end
 
 
-
 post "/addpost" do
 	@user_id = session[:user_id]
 	@new_post = params[:new_post]
 	@post_image = params[:post_image]
 	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
+	redirect('/')
+end
+
+
+get "/posts" do 
+	@all_posts = Post.all 
+
+	erb :postlist
+end
+
+
+get '/posts/:id' do
+	@post_id = params[:id]
+ 	@post = Post.where(id: @post_id)
+
+ 	erb :postpage
+end	
+
+
+put "/update_post/:id" do 
+	 current_user = session[:user_id]
+	 user = User.find(current_user)
+	 current_user_pets = user.posts
+	 current_pets = current_user_pets.pluck(:pet_name)
+	 update_pet_name = params[:pet_name]
+
+		 if current_pets.include?(update_pet_name)
+		update_pet_name = params[:pet_name]
+		update_pet = Pet.find_by(pet_name: update_pet_name)
+		new_image = params[:new_image]
+		update_pet.image = new_image
+		update_pet.save
+		redirect('/pets')
+		else
+		redirect('/')
+	end
+end
+
+
+delete "/delete_post" do 
+	@post_id = params[:post_to_delete]
+	@deletion_post = Post.find(@post_id)
+	if @deletion_post.delete
+	redirect('/')
+	else
+		puts "not working"
+	end
 end
 
 
@@ -130,12 +177,6 @@ delete "/delete" do
 	end
 end
 
-# user.destroy
-# User.find(15).destroy
-# User.destroy(15)
-# User.where(:age => 15).destroy_all
-# User.destroy_all(:age => 15)
-
 
 get "/session/logout" do
   session.clear
@@ -147,10 +188,8 @@ end
 #PETS ROUTES
 
 get '/pets' do
-
-	@total_pets = Pet.all 
+	@all_pets = Pet.all 
 		
-
 	erb :petlist
 end
 
@@ -176,6 +215,7 @@ post "/addpet" do
 	@image = params[:image]
 	@user_id = session[:user_id]
 	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, user_id: @user_id)
+	@username = User.find(@user_id)
 	redirect ('/users')
 end
 
@@ -198,6 +238,7 @@ put "/update_pet/:pet_name" do
 		redirect('/')
 	end
 end
+
 
 delete "/delete_pet" do 
 	@pet_id = params[:pet_to_delete]
@@ -222,6 +263,7 @@ get '/hoods' do
 	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
 	erb :hoods
 end
+
 
 get "/hoods/:neighborhood" do 
  

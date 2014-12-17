@@ -6,7 +6,7 @@ class CreatePets < ActiveRecord::Migration
   	  t.text :breed, null: false
   	  t.text :image
   	  t.belongs_to :user
-  	  t.timestamp
+  	  t.timestamps
   	end
   end
 end
