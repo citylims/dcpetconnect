@@ -9,6 +9,8 @@ require_relative './models/user'
 require_relative './models/pet'
 require_relative './models/post'
 require_relative './models/comment'
+require_relative './models/tag'
+require_relative './models/tagging'
 require_relative './config/environments'
 
 binding.pry
@@ -91,7 +93,10 @@ post "/addpost" do
 	@user_id = session[:user_id]
 	@new_post = params[:new_post]
 	@post_image = params[:post_image]
-	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
+	@tag = params[:tag]
+	new_post = Post.create(body: @new_post, image: @post_image, user_id: @user_id).id
+	new_tag = Tag.create(body: @tag).id
+	Tagging.create(post_id: new_post, tag_id: new_tag)
 	redirect('/')
 end
 

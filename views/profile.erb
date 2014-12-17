@@ -37,6 +37,10 @@
 				<li>
 					<h3><%= post.body %></h3>
 					<p><%= post.created_at %></p>
+						<% tags = post.tags %>
+						<% tags.each do |tag| %>
+					<p><%= tag.body %></p>
+						<% end %>
 					<img class ="pet-image" src="<%= post.image %>">
 						<% post.comments.each do |comment| %>
 						<% user = User.find(comment.user_id) %>
@@ -47,7 +51,7 @@
 					<form action="/addcomment" method = "post">
 					  <legend>Comment</legend>
 					  <input type="hidden" value="<%= post.id %>" name="post_id">
-					  <input type="text" placholder="Comment..." name="comment"></textarea>
+					  <input type="text" placholder="Comment..." name="comment">
 					  <input class = "fs" type="submit" placeholder="Create">
 					</form>
 					<% if session[:user_id] == @current_id %>
