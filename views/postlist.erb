@@ -1,0 +1,8 @@
+<ul>
+	<%= @all_posts.each do |post| %>
+	<li>
+		<h3><%= post.body %></h3>
+		<img class ="pet-image" src ="<%=post.image %>">
+		<p><%= post.created_at %></p>
+	</li>
+</ul>

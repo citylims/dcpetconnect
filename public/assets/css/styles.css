@@ -22,20 +22,25 @@
   width: 750px;
   border-top-left-radius: 16%;
   border-top-right-radius: 16%;
+
 }
 
 .profile-name {
-	/*color: black*/
+	color: black
+
 }
-.hood {
+
+.profile-hood {
 	margin-top: -80px;
-	/*color: black;*/
+	color: black;
+
 }
 
 .site-title {
 	background-color: black;
 	width 80%;
 	height: 50px;
+
 }
 
 .signup {
@@ -44,9 +49,12 @@
 }
 
 .signup a {
+  margin: auto;
 	display: block;
 	clear: both;
 	font-size: 30px;
+  max-width: 200px;
+
 }
 
 h2.page-title {
@@ -59,22 +67,31 @@ h2.page-title {
   padding-top: 0px;
   margin-top: 0px;
   width: 1200px;
+
 }
 
 li p {
 	padding-left: 10px;
 	color: red;
+
+}
+
+h3 {
+
 }
 
 .profile-header {
 	margin-top: -100px;
+
 }
 
 .profile-header a{
 	display: block;
 	text-align: center;
+
 }
 
 .list-display {
 	color :yellow;
+  
 }

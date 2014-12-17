@@ -2,13 +2,15 @@
 body {
   font-family: 'merriweather', Georgia, serif;
   background-color: white;
+  /*background: url("http://williambeem.com/wp-content/uploads/2012/08/Overlooking-DC.jpg");*/
   /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
   background-size: cover;
   overflow-y: auto;
   overflow-x: hidden;
 
 }
-header {
+
+section {
   text-align: center; /*to center form*/
   position: relative;
   display: block;
@@ -26,6 +28,7 @@ header {
 
 
 }
+
 h1 {
   font-family: 'Roboto Condensed', serif;
   color: #ff6633;
@@ -39,6 +42,7 @@ h1 {
   line-height: 15px;
 
 }
+
 h2{
   color: #FF6633;
   font-family: 'Roboto Condensed', serif;
@@ -52,17 +56,20 @@ h2{
 
 
 }
+
 form {
   width: 200px;
   margin: auto 0;
   display: inline-block; /*centering the form */
   color: lime;
 }
+
 input {
   margin-bottom: 1em;
   border: 3px solid red;
   width: 200px;
 }
+
 legend {
   text-align: center;
 }
@@ -76,6 +83,7 @@ ul {
 ul li span {
   color: #f0b747;
 }
+
 p {
   line-height: 1.4em;
   text-indent: 10px;
@@ -84,18 +92,21 @@ p {
   padding: 25px 50px;
 
 }
+
 a {
   color:#70fb1a;
   font-style: italic;
   padding-right: 4px;
 
 }
+
 span {
   color: #FF6633;
 
   font-size: 1.5em;
   font-weight: bold;
 }
+
 .primary_content
 {
   /* ROUNDED CORNERS */
@@ -114,15 +125,17 @@ span {
   /*background-color: rgba(0, 0, 0 .2);*/
   padding: 75px;
 
-
 }
+
 /*ID Selectors*/
+
 .page
 {
   margin: 0 auto 0 auto;
   width: 900px;
 
 }
+
 .site_title
 {
   font-family: 'Roboto Condensed', serif;
@@ -137,7 +150,6 @@ span {
   padding-left: 40px;
   padding-bottom: 5px;
 
-
 }
 
 /*Top Navigation Menu*/
@@ -146,23 +158,27 @@ span {
   width: 700px;
 
 }
+
 .menu li {
   padding: 30px;
   display: inline;
 
 }
+
 .menu ul a {
   text-decoration: none;
   margin-left: 20px;
   text-align: center;
 
 }
+
 .menu ul a:hover {
   text-decoration: underline;
 
 }
 
 /*Bio*/
+
 .bio_frame {
   width: 50%;
   margin: auto;
@@ -173,6 +189,7 @@ span {
   background-color: black;
 
 }
+
 .about {
   margin: 0 auto ;
   width: 750px;
@@ -180,6 +197,7 @@ span {
   background-color: black;
 
 }
+
 p#thanks {
   margin-top: -30px;
   font-size: 18px;
@@ -189,12 +207,6 @@ p#thanks {
 }
 
 /*Class selectors*/
-/*.home_photo {
-  width 400px;
-  height 650px;
-  background: url("images/barney.jpg")
-}*/
-
 
 .fs
 {
@@ -221,6 +233,7 @@ img.bio_image{
   max-width: 400px;
   height: 400px;
 }
+
 p.caption {
   font-family: Tahoma, serif;
   color: white;
@@ -230,13 +243,15 @@ p.caption {
   padding: ;
 
 }
+
 article.social_nav {
 margin-top: -50px;
 
-
 }
+
 div.social_icons {
   padding: 0 30px;
   margin-left: 50px;
   width: 1000px;
+  
 }

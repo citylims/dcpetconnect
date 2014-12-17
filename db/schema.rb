@@ -17,24 +17,30 @@ ActiveRecord::Schema.define(version: 20141215153828) do
   enable_extension "plpgsql"
 
   create_table "pets", force: true do |t|
-    t.text    "pet_name", null: false
-    t.text    "animal",   null: false
-    t.text    "breed",    null: false
-    t.text    "image"
-    t.integer "user_id"
+    t.text     "pet_name",   null: false
+    t.text     "animal",     null: false
+    t.text     "breed",      null: false
+    t.text     "image"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
-    t.text    "body",    null: false
-    t.text    "image"
-    t.integer "user_id"
+    t.text     "body",       null: false
+    t.text     "image"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.text "user_name",       null: false
-    t.text "email",           null: false
-    t.text "password_digest", null: false
-    t.text "neighborhood",    null: false
+    t.text     "user_name",       null: false
+    t.text     "email",           null: false
+    t.text     "password_digest", null: false
+    t.text     "neighborhood",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
