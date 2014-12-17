@@ -19,7 +19,7 @@
 			<% else %>
 			<% end %>
 		</div>
-		<div>
+		<div class ="profile-pets">
 			<ul>
 				<% @current_pets.each do |pet| %>
 					<li>
@@ -31,7 +31,7 @@
 				<% end %>
 			</ul>
 		</div>
-		<div>
+		<div class ="profile-posts">
 			<ul>
 			<% @current_posts.each do |post| %>
 				<li>
@@ -39,6 +39,8 @@
 					<p><%= post.created_at %></p>
 					<img class ="pet-image" src="<%= post.image %>">
 						<% post.comments.each do |comment| %>
+						<% user = User.find(comment.user_id) %>
+							<p><%= user.user_name.capitalize %></p>
 							<p><%= comment.body %></p>
 							<p><%= comment.created_at %></p>
 						<% end %>
