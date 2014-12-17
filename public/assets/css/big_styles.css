@@ -1,10 +1,10 @@
 /*Global selectors*/
 body {
   font-family: 'merriweather', Georgia, serif;
-  background-color: white;
+  /*background-color: black;*/
   /*background: url("http://williambeem.com/wp-content/uploads/2012/08/Overlooking-DC.jpg");*/
-  /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
-  background-size: cover;
+  background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");
+  /*background-size: cover;*/
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -31,7 +31,7 @@ section {
 
 h1 {
   font-family: 'Roboto Condensed', serif;
-  color: #ff6633;
+  color: #BF0000;
   font-size: 48px;
   font-weight: bold;
   font-style: italic;
@@ -44,7 +44,7 @@ h1 {
 }
 
 h2{
-  color: #FF6633;
+  color: #BF0000;
   font-family: 'Roboto Condensed', serif;
   text-decoration: underline;
   text-align: center;
@@ -87,7 +87,7 @@ ul li span {
 p {
   line-height: 1.4em;
   text-indent: 10px;
-  color: #f0b747;
+  color: #BF0000;
   margin: 0 auto;
   padding: 25px 50px;
 
@@ -101,8 +101,8 @@ a {
 }
 
 span {
-  color: #FF6633;
-
+  color: #BF0000;
+  
   font-size: 1.5em;
   font-weight: bold;
 }
@@ -119,10 +119,11 @@ span {
   box-shadow: 0px 0px 14px #000000;
   /* OTHER */
   /*background-color: #F1ECE7;*/
-  background-color: white;
-  /*background: url("http://www.commentnation.com/backgrounds/images/green_seamless_paw_prints_with_black_background_wallpaper.gif");*/
+  background-color: black;
+  /*background: url("http://holidayinndc.files.wordpress.com/2013/01/inauguration-2013-washington-dc4.jpg");*/
   /*background: url("http://psdmockups.s3.amazonaws.com/wp-content/uploads/2013/03/wood_grain_2x4_beam_texture.jpg");*/
   /*background-color: rgba(0, 0, 0 .2);*/
+  background-size: cover;
   padding: 75px;
 
 }
@@ -154,7 +155,7 @@ span {
 
 /*Top Navigation Menu*/
 .menu {
-  margin-top: -75px;
+ /* margin-top: -75px;*/
   width: 700px;
 
 }
@@ -175,6 +176,11 @@ span {
 .menu ul a:hover {
   text-decoration: underline;
 
+}
+
+.menu img {
+  max-width: 20px;
+  max-height: 20px;
 }
 
 /*Bio*/
