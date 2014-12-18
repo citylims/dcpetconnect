@@ -1,11 +1,27 @@
-<h3><%= @current.user_name.capitalize %></h3>
-<h3>New Post</h3>
-
- <form action="/addpost" method = "post">
-  <legend>Post</legend>
-  <textarea type="text" placholder="Comment..." name="new_post"></textarea>
-  <input type="text" placeholder="Tag..." maxlength="16" name="tag">
-  <legend>Picture Url</legend>
-  <input type="text" placeholder="url" name="post_image">
-  <input class = "fs" type="submit" placeholder="Create">
-</form>
+<div class="page">
+  <div class="primary_content">
+        <div class="site_title">
+          <span>Add a Pet</span>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
+            <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
+            <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
+          </ul>
+        </nav>    
+        <div class="signup">
+            <h3>New Post</h3>
+            <form action="/addpost" method = "post">
+                <legend>Post</legend>
+                    <textarea type="text" placholder="Comment..." name="new_post"></textarea>
+                <legend>Tag</legend>
+                <input type="text" placeholder="Tag..." maxlength="16" name="tag">
+                <legend>Picture Url</legend>
+                    <input type="text" placeholder="url" name="post_image">
+                 <input class = "fs" type="submit" placeholder="Create">
+            </form>
+        </div>
+    </div>
+</div>
+ 
