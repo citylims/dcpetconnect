@@ -143,6 +143,15 @@ height: 100px;
   color: black;
 }
 
+.comment-name {
+  font-size: 24px;
+  color: green;
+}
+
+.post {
+  border-bottom: 3px solid black;
+}
+
 .rotate{
     -webkit-transition-duration: 0.8s;
     -moz-transition-duration: 0.8s;

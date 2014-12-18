@@ -45,35 +45,37 @@
 			<div id="posts">
 				<h3>Posts</h3>
 			</div>
-			<ul>
-			<% @current_posts.each do |post| %>
-				<li>
-					<img class ="pet-image" src="<%= post.image %>">
-					<% tags = post.tags %>
-						<% tags.each do |tag| %>
-					<p><%= tag.body %></p>
-						<% end %>
-					<h3><%= post.body %></h3>
-					<p><%= post.created_at %></p>
+			<div class="posts">
+				<ul>
+				<% @current_posts.each do |post| %>
+					<li>
+						<img class ="pet-image" src="<%= post.image %>">
+						<% tags = post.tags %>
+							<% tags.each do |tag| %>
+						<p><%= tag.body %></p>
+							<% end %>
+						<h3><%= post.body %></h3>
+						<p><%= post.created_at %></p>
 						<% post.comments.each do |comment| %>
 						<% user = User.find(comment.user_id) %>
-							<p><%= user.user_name.capitalize %></p>
-							<p><%= comment.body %></p>
+							<p class= "comment-name"><%= user.user_name.capitalize  %> commented...</p>
+							<h4><%= comment.body %></h4>
 							<p><%= comment.created_at %></p>
 						<% end %>
-					<form action="/addcomment" method = "post">
-					  <legend>Comment</legend>
-					  <input type="hidden" value="<%= post.id %>" name="post_id">
-					  <input type="text" placholder="Comment..." name="comment">
-					  <input class = "fs" type="submit" placeholder="Create">
-					</form>
-					<% if session[:user_id] == @current_id %>
-					<a href="/posts/<%= post.id %>">delete post</a>
-					<% else %>
-					<% end %>
-				</li>
-			<% end %>
-			</ul>
+						<form action="/addcomment" method = "post">
+						  <legend>Comment</legend>
+						  <input type="hidden" value="<%= post.id %>" name="post_id">
+						  <input type="text" placholder="Comment..." name="comment">
+						  <input class = "fs" type="submit" placeholder="Create">
+						</form>
+						<% if session[:user_id] == @current_id %>
+						<a href="/posts/<%= post.id %>">delete post</a>
+						<% else %>
+						<% end %>
+					</li>
+				<% end %>
+				</ul>
+			</div> 
 		</div>
 	</div>
 </div>
