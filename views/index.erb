@@ -17,7 +17,11 @@
           <div class= "home_photo">
           </div>
           <a href="#"><img class="bio_image" src="<%= @selected_pet %>" alt="Random_Pet" /></a>
-          <p class="caption"></p>
+          <% if @selected_pet %>
+          <p class="caption">Meet "<%= @front_pet.capitalize %>" From "<%= @pet_hood.capitalize %>"</p>
+          <% else %>
+          <p class="caption">Meet " " From " "</p>
+          <% end %>
         </div>
         <div class="about">
           <div class="login">
@@ -41,12 +45,12 @@
         <article class="social_nav">
           <h2>Follow Us!</h2>
           <div class="social_icons">
-            <a href="#"><img src="/assets/images/social/facebookicon.png" alt="icon"/></a>
-            <a href="#"><img src="/assets/images/social/googleicon.png" alt="icon"/></a>
-            <a href="#"><img src="/assets/images/social/linkedinicon.png" alt="icon"/></a>
-            <a href="#"><img src="/assets/images/social/twittericon.png" alt="icon"/></a>
-            <a href="#"><img src="/assets/images/social/instagramicon.png" alt="icon"/></a>
-            <a href="#"><img src="/assets/images/social/emailicon.png" alt="icon"/></a>
+            <a href="#"><img src="http://i.imgur.com/An6roBl.png" alt="icon"/></a>
+            <a href="#"><img src="http://i.imgur.com/mwFOANR.png" alt="icon"/></a>
+            <a href="#"><img src="http://i.imgur.com/AKuOART.png" alt="icon"/></a>
+            <a href="#"><img src="http://i.imgur.com/xCFityT.png" alt="icon"/></a>
+            <a href="#"><img src="http://i.imgur.com/WgXSaxC.png" alt="icon"/></a>
+            <a href="#"><img src="http://i.imgur.com/IAD9917.png" alt="icon"/></a>
           </div>
         </article>
       </div>
