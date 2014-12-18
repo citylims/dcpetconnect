@@ -78,8 +78,8 @@ post '/signup' do
 	# @password = params[:password]
 	@password = BCrypt::Password.create(params[:password])
 	@neighborhood = params[:neighborhood]
-  User.create(user_name: @user_name, email: @email, password_digest: @password, neighborhood: @neighborhood)
-  redirect('/')
+  	User.create(user_name: @user_name, email: @email, password_digest: @password, neighborhood: @neighborhood)
+  redirect('/#log')
 end
 
 
