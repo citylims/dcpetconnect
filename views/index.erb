@@ -1,24 +1,23 @@
 
 <div class="page">
-    
     <div class="primary_content">
       <div class="site_title">
       <span>DC PET CONNECTION</span>
-    </div>
-      <div class="menu">
+      </div>
+      <nav class="menu">
         <ul>
           <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
           <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
           <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="#log">CONNECT</a></li>
         </ul>
-      </div>
+      </nav>
       <section>
         <h1>Pet Connection</h1>
         <div class="bio_frame">
           <div class= "home_photo">
           </div>
           <a href="#"><img class="bio_image" src="<%= @selected_pet %>" alt="Random_Pet" /></a>
-          <p class="caption">(This is "<%= @front_pet %>" from "<%= @pet_hood %>")</p>
+          <p class="caption">Meet "<%= @front_pet.capitalize %>" From "<%= @pet_hood.capitalize %>"</p>
         </div>
         <div class="about">
           <div class="login">

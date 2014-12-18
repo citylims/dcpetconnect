@@ -44,8 +44,13 @@
 }
 
 .signup {
+  padding-top: ;
 	margin: auto;
 	text-align:  center;
+  width: 750px;
+  height: 400px;
+  background-color: black;
+ 
 }
 
 .signup a {
@@ -76,9 +81,6 @@ li p {
 
 }
 
-h3 {
-
-}
 
 .profile-header {
 	margin-top: -100px;
