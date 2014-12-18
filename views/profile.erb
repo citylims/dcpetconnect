@@ -10,11 +10,11 @@
 	          <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
         	</ul>
       	</nav>
-		<div class="profile-header">
+		<nav class="profile-header">
 			<h2 class= "profile-name"><%= @current.user_name.capitalize %></h2>
 			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
 			<% if session[:user_id] == @current_id %>
-		</div>
+		</nav>
 		<div class="menu">
         	<ul>
 	          <li><a href="/addpet">Add a pet</a></li>
