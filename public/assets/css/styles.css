@@ -63,7 +63,7 @@
 
 .site-title {
 	background-color: black;
-	width 80%;
+	width: 80%;
 	height: 50px;
 
 }
@@ -103,7 +103,8 @@ h2.page-title {
 
 li p {
 	padding-left: 10px;
-	color: blue;
+	color: #EEC015;
+  font-weight: bold;
 
 }
 
@@ -138,6 +139,9 @@ height: 150px;
   display: block;
 }
 
+.hoods ul li a {
+  color: black;
+}
 
 .rotate{
     -webkit-transition-duration: 0.8s;

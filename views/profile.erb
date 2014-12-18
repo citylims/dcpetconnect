@@ -25,20 +25,26 @@
 			<% else %>
 			<% end %>
 		<div class ="profile-pets">
-			<h3>Pets</h3>
+			<a href = "#pets">Pets</a>
+			<a href = "#posts">Posts</a>
+			<div id="pets">
+				<h3>Pets</h3>
+			</div>
 			<ul>
 				<% @current_pets.each do |pet| %>
 					<li>
 						<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
-						<h4><%= pet.animal %><h4>
-						<h4><%= pet.breed %></h4>
+						<h4><%= pet.animal.capitalize %></h4>
+						<h4><%= pet.breed.capitalize %></h4>
 						<img class ="pet-image" src="<%= pet.image %>">
 					</li>
 				<% end %>
 			</ul>
 		</div>
 		<div class ="profile-posts">
-			<h3>Posts</h3>
+			<div id="posts">
+				<h3>Posts</h3>
+			</div>
 			<ul>
 			<% @current_posts.each do |post| %>
 				<li>

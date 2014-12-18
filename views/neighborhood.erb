@@ -15,7 +15,7 @@
 		<ul> 
 			<% @neighborhood_pets.each do |pet| %>
 			<li>
-				<p><%= pet.pet_name %></p>
+				<h3><%= pet.pet_name %></h3>
 				<img class ="pet-image" src="<%= pet.image %>">
 			</li>
 			<% end %>
