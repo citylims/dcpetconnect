@@ -3,7 +3,7 @@ body {
   font-family: 'merriweather', Georgia, serif;
   /*background-color: black;*/
   /*background: url("http://williambeem.com/wp-content/uploads/2012/08/Overlooking-DC.jpg");*/
-  background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");
+  /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
   /*background-size: cover;*/
   overflow-y: auto;
   overflow-x: hidden;
@@ -32,7 +32,7 @@ section {
 h1 {
   font-family: 'Roboto Condensed', serif;
   color: #BF0000;
-  font-size: 48px;
+  font-size: 4em;
   font-weight: bold;
   font-style: italic;
   text-align: center;
@@ -57,16 +57,34 @@ h2{
 
 }
 
+h2.page-title {
+  color: #FF6633;
+  font-family: 'Roboto Condensed', serif;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+  padding-top: 0px;
+  margin-top: 0px;
+  width: 1200px;
+
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #BF0000;
+}
+
 form {
   width: 200px;
   margin: auto 0;
   display: inline-block; /*centering the form */
-  color: lime;
+  color: #BCE5FF;
 }
 
 input {
   margin-bottom: 1em;
-  border: 3px solid red;
+  border: 1px solid red;
   width: 200px;
 }
 
@@ -80,9 +98,6 @@ ul {
 
 }
 
-ul li span {
-  color: #f0b747;
-}
 
 p {
   line-height: 1.4em;
@@ -94,17 +109,20 @@ p {
 }
 
 a {
-  color:#70fb1a;
+  color:#EEC015;
   font-style: italic;
-  padding-right: 4px;
+  /*padding-right: 4px;*/
 
 }
 
 span {
   color: #BF0000;
-
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
+  font-family: 'Roboto Condensed', serif;
+  text-transform: uppercase;
+  text-align: left;
+  font-style: italic;
 }
 
 .primary_content
@@ -139,26 +157,14 @@ span {
 
 .site_title
 {
-  font-family: 'Roboto Condensed', serif;
-  color: white;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-align: left;
-  font-weight: bold;
-  font-size: 20px;
-  font-style: italic;
   line-height: 15px;
   padding-left: 40px;
-  padding-bottom: 5px;
+  margin-top: -40px;
 
 }
 
 /*Top Navigation Menu*/
 .menu {
- /*
-
-
- */
   width: 700px;
 
 }
@@ -182,8 +188,8 @@ span {
 }
 
 .menu img {
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 25px;
+  max-height: 25px;
 }
 
 /*Bio*/
@@ -202,8 +208,10 @@ span {
 .about {
   margin: 0 auto ;
   width: 750px;
-  height: 350px;
+  height: 400px;
   background-color: black;
+ 
+  
 
 }
 
@@ -220,8 +228,8 @@ p#thanks {
 .fs
 {
   width: 210px;
-  padding: 10px 15px 11px !important;
-  font-size: 18px !important;
+  padding: 10px 15px 11px;
+  font-size: 18px;
   background-color: #57d6c7;
   font-weight: bold;
   text-shadow: 1px 1px #57D6C7;
