@@ -17,7 +17,11 @@
           <div class= "home_photo">
           </div>
           <a href="#"><img class="bio_image" src="<%= @selected_pet %>" alt="Random_Pet" /></a>
+          <% if @selected_pet %>
           <p class="caption">Meet "<%= @front_pet.capitalize %>" From "<%= @pet_hood.capitalize %>"</p>
+          <% else %>
+          <p class="caption">Meet " " From " "</p>
+          <% end %>
         </div>
         <div class="about">
           <div class="login">

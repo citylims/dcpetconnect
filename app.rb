@@ -37,16 +37,20 @@ end
 #USER ROUTES
 
 get '/' do
+	
 	@front_page_pet = Pet.pluck(:image)
 	@selected_pet = @front_page_pet.sample
+	if @selected_pet
+
 	pet = Pet.find_by(image: @selected_pet)
 	owner = pet.user_id
 	pet_owner = User.find(owner)
 	@pet_hood = pet_owner.neighborhood
 	@front_pet = pet.pet_name
-
-
+	else
+end
 	erb :index
+
 end
 
 
