@@ -15,13 +15,13 @@
 			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
 			<% if session[:user_id] == @current_id %>
 		</div>
-		<nav class="menu">
+		<div class="menu">
         	<ul>
 	          <li><a href="/addpet">Add a pet</a></li>
 	          <li><a href="/addpost">Create a post</a></li>
 	          <li><a href="/delete">Delete Account</a><h2></li>
         	</ul>
-      	</nav>
+      	</div>
 			<% else %>
 			<% end %>
 		<div class ="profile-pets">
