@@ -174,7 +174,7 @@ span {
 /*Top Navigation Menu*/
 .menu {
   width: 700px;
-  border-bottom: 2px solid black;
+  /*border-bottom: 2px solid black;*/
 }
 
 .menu li {
