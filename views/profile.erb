@@ -14,15 +14,16 @@
 			<h2 class= "profile-name"><%= @current.user_name.capitalize %></h2>
 			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
 			<% if session[:user_id] == @current_id %>
-
-				<div class="">
-					<a href="/addpet"> Add a pet!</a>
-					<a href="/addpost">Create a post!</a>
-					<h2><a href="/delete">Delete Account!</a><h2> 
-				</div>
+		</div>
+		<nav class="menu">
+        	<ul>
+	          <li><a href="/addpet">Add a pet</a></li>
+	          <li><a href="/addpost">Create a post</a></li>
+	          <li><a href="/delete">Delete Account</a><h2></li>
+        	</ul>
+      	</nav>
 			<% else %>
 			<% end %>
-		</div>
 		<div class ="profile-pets">
 			<ul>
 				<% @current_pets.each do |pet| %>

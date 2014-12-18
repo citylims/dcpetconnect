@@ -26,15 +26,40 @@
 }
 
 .profile-name {
-	color: black
+	color: #141C22;
 
 }
 
 .profile-hood {
 	margin-top: -80px;
-	color: black;
+	color: #141C22;
 
 }
+
+.profile-nav {
+  width: 1000px;
+
+}
+
+.profile-nav li {
+  padding-right: 20px;
+  display: inline;
+}
+
+.profile-nav ul a {
+  text-decoration: none;
+  margin-left: 20px;
+  text-align: center;
+
+}
+
+.profile-nav ul a:hover {
+  text-decoration: underline;
+
+}
+
+
+
 
 .site-title {
 	background-color: black;
@@ -44,12 +69,13 @@
 }
 
 .signup {
+  border: 10%;
   padding-top: ;
 	margin: auto;
 	text-align:  center;
   width: 750px;
   height: 400px;
-  background-color: black;
+  background-color: #141C22;
  
 }
 
@@ -87,15 +113,13 @@ li p {
 
 }
 
-.profile-header a{
-	display: block;
-	text-align: center;
 
+.list-display a{
+	color: #EEC015;
 }
 
-.list-display {
-	color :yellow;
-  
+.list-display p {
+  color: #EEC015;
 }
 
 textarea {
@@ -105,7 +129,9 @@ height: 150px;
 }
 
 .profile-pets {
-  border: 1px solid black;
+  margin-top: -150px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
 }
 
 

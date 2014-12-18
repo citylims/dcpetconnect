@@ -1,7 +1,7 @@
 /*Global selectors*/
 body {
   font-family: 'Merriweather', Georgia, serif;
-  /*background-color: black;*/
+  background-color: #EBF7FF;
   /*background: url("http://williambeem.com/wp-content/uploads/2012/08/Overlooking-DC.jpg");*/
   /*background: url("http://st.depositphotos.com/1987177/3367/v/950/depositphotos_33679631-Seamless-background---pet-paw-print-and-bone.jpg");*/
   /*background-size: cover;*/
@@ -34,7 +34,6 @@ h1 {
   color: #BF0000;
   font-size: 4em;
   font-weight: bold;
-  font-style: italic;
   text-align: center;
   text-decoration: underline;
   text-transform: uppercase;
@@ -49,13 +48,13 @@ h2{
   text-decoration: underline;
   text-align: center;
   font-size: 40px;
-  font-style: italic;
   padding-top: 40px;
   margin-top: 80px;
   width: 750px;
 
 
 }
+
 
 h2.page-title {
   color: #FF6633;
@@ -75,11 +74,16 @@ h3 {
   color: #BF0000;
 }
 
+.form-header {
+  font-size: 2em;
+  padding-top: 20px;
+  text-decoration: underline;
+}
 form {
   width: 200px;
   margin: auto 0;
   display: inline-block; /*centering the form */
-  color: #BCE5FF;
+  color: #BF0000;
 }
 
 input {
@@ -90,6 +94,7 @@ input {
 
 legend {
   text-align: center;
+  font-weight: bold;
 }
 
 ul {
@@ -110,7 +115,6 @@ p {
 
 a {
   color:#EEC015;
-  font-style: italic;
   /*padding-right: 4px;*/
 
 }
@@ -201,7 +205,7 @@ span {
   border: 4px solid #d7d7d7;
   overflow: hidden;
   /*border-radius: 20px;*/
-  background-color: black;
+  background-color: #141C22;
 
 }
 
@@ -209,8 +213,7 @@ span {
   margin: 0 auto ;
   width: 750px;
   height: 400px;
-  background-color: black;
- 
+  background-color: #141C22;
   
 
 }
@@ -230,14 +233,14 @@ p#thanks {
   width: 210px;
   padding: 10px 15px 11px;
   font-size: 18px;
-  background-color: #57d6c7;
+  background-color: white;
   font-weight: bold;
-  text-shadow: 1px 1px #57D6C7;
-  color: #ffffff;
+  text-shadow: 1px 1px black;
+  color: #BF0000;
   border-radius-right: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border: 1px solid #57D6C7;
+  border: 1px solid black;
   cursor: pointer;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
@@ -249,16 +252,23 @@ img.bio_image{
   margin: auto;
   max-width: 400px;
   height: 400px;
+  padding-top: 20px;
 }
 
 p.caption {
-  font-family: Tahoma, serif;
+  font-family: "Roboto Condensed", serif;
   color: white;
-  font-size: 10px;
-  font-style: italic;
+  font-size: 15px;
   text-align: center;
-  padding: ;
 
+}
+
+p.author {
+  font-family: 'Roboto Condensed', serif;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  color: #BF0000;
 }
 
 article.social_nav {
