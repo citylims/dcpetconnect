@@ -61,12 +61,12 @@ form {
   width: 200px;
   margin: auto 0;
   display: inline-block; /*centering the form */
-  color: lime;
+  color: #BCE5FF;
 }
 
 input {
   margin-bottom: 1em;
-  border: 3px solid red;
+  border: 1.5px solid red;
   width: 200px;
 }
 
@@ -94,7 +94,7 @@ p {
 }
 
 a {
-  color:#70fb1a;
+  color:#EEC015;
   font-style: italic;
   padding-right: 4px;
 
@@ -182,8 +182,8 @@ span {
 }
 
 .menu img {
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 25px;
+  max-height: 25px;
 }
 
 /*Bio*/
@@ -204,6 +204,8 @@ span {
   width: 750px;
   height: 350px;
   background-color: black;
+ 
+  
 
 }
 
@@ -220,8 +222,8 @@ p#thanks {
 .fs
 {
   width: 210px;
-  padding: 10px 15px 11px !important;
-  font-size: 18px !important;
+  padding: 10px 15px 11px;
+  font-size: 18px;
   background-color: #57d6c7;
   font-weight: bold;
   text-shadow: 1px 1px #57D6C7;
