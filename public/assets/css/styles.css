@@ -132,7 +132,7 @@ height: 100px;
 .profile-pets {
   margin-top: -150px;
   border-top: 3px solid black;
-  border-bottom: 3px solid black;
+
 }
 
 .profile-posts a {
@@ -148,9 +148,6 @@ height: 100px;
   color: green;
 }
 
-.post {
-  border-bottom: 3px solid black;
-}
 
 .rotate{
     -webkit-transition-duration: 0.8s;
