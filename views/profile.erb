@@ -1,7 +1,7 @@
 <div class="page">
 	<div class="primary_content">
 		<div class="site_title">
-      		<span>DC PET CONNECTION - User</span>
+      		<span>User - <%= @current.user_name.capitalize %></span>
       	</div>
 	    <nav class="menu">
         	<ul>
@@ -14,7 +14,8 @@
 			<h2 class= "profile-name"><%= @current.user_name.capitalize %></h2>
 			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
 			<% if session[:user_id] == @current_id %>
-				<div class="signup">
+
+				<div class="">
 					<a href="/addpet"> Add a pet!</a>
 					<a href="/addpost">Create a post!</a>
 					<h2><a href="/delete">Delete Account!</a><h2> 

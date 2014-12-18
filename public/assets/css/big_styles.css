@@ -117,8 +117,12 @@ a {
 
 span {
   color: #BF0000;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
+  font-family: 'Roboto Condensed', serif;
+  text-transform: uppercase;
+  text-align: left;
+  font-style: italic;
 }
 
 .primary_content
@@ -153,26 +157,14 @@ span {
 
 .site_title
 {
-  font-family: 'Roboto Condensed', serif;
-  color: white;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-align: left;
-  font-weight: bold;
-  font-size: 20px;
-  font-style: italic;
   line-height: 15px;
   padding-left: 40px;
-  padding-bottom: 5px;
+  margin-top: -40px;
 
 }
 
 /*Top Navigation Menu*/
 .menu {
- /*
-
-
- */
   width: 700px;
 
 }
