@@ -25,6 +25,7 @@
 			<% else %>
 			<% end %>
 		<div class ="profile-pets">
+			<h3>Pets</h3>
 			<ul>
 				<% @current_pets.each do |pet| %>
 					<li>
@@ -37,16 +38,17 @@
 			</ul>
 		</div>
 		<div class ="profile-posts">
+			<h3>Posts</h3>
 			<ul>
 			<% @current_posts.each do |post| %>
 				<li>
-					<h3><%= post.body %></h3>
-					<p><%= post.created_at %></p>
-						<% tags = post.tags %>
+					<img class ="pet-image" src="<%= post.image %>">
+					<% tags = post.tags %>
 						<% tags.each do |tag| %>
 					<p><%= tag.body %></p>
 						<% end %>
-					<img class ="pet-image" src="<%= post.image %>">
+					<h3><%= post.body %></h3>
+					<p><%= post.created_at %></p>
 						<% post.comments.each do |comment| %>
 						<% user = User.find(comment.user_id) %>
 							<p><%= user.user_name.capitalize %></p>

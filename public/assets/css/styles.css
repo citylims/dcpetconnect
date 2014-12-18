@@ -134,6 +134,10 @@ height: 150px;
   border-bottom: 3px solid black;
 }
 
+.profile-posts a {
+  display: block;
+}
+
 
 .rotate{
     -webkit-transition-duration: 0.8s;
