@@ -15,7 +15,7 @@
 			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
 			<% if session[:user_id] == @current_id %>
 		</div>
-		<nav class="menu">
+		<nav class="menu"> 
         	<ul>
 	          <li><a href="/addpet">Add a pet</a></li>
 	          <li><a href="/addpost">Create a post</a></li>
@@ -23,6 +23,7 @@
         	</ul>
       	</nav>
 			<% else %>
+			<!-- bug -->
 			<nav class="menu">
         	<ul>
 	          <li><a href="/">Add a pet</a></li>
