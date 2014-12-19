@@ -65,7 +65,6 @@ post '/login' do
 	user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    @login_user = 
     redirect('/users')
   else
    redirect('/404')
@@ -104,7 +103,8 @@ post "/addpost" do
 	new_post = Post.create(body: @new_post, image: @post_image, user_id: @user_id).id
 	new_tag = Tag.create(body: @tag).id
 	Tagging.create(post_id: new_post, tag_id: new_tag)
-	redirect('/')
+	post_user = User.find(@user_id)
+	redirect ('/users')
 end
 
 
@@ -147,7 +147,7 @@ delete "/delete_post" do
 	@post_id = params[:post_to_delete]
 	@deletion_post = Post.find(@post_id)
 	if @deletion_post.delete
-	redirect('/')
+	redirect('/users')
 	else
 		puts "not working"
 	end
@@ -248,7 +248,7 @@ put "/update_pet/:pet_name" do
 		update_pet.save
 		redirect('/pets')
 		else
-		redirect('/')
+		redirect('/users')
 	end
 end
 
@@ -257,7 +257,7 @@ delete "/delete_pet" do
 	@pet_id = params[:pet_to_delete]
 	@deletion_pet = Pet.find(@pet_id)
 	if @deletion_pet.delete
-	redirect('/')
+	redirect('/users')
 	else
 		puts "not working"
 	end
@@ -305,7 +305,7 @@ post '/addcomment' do
 	@post_id = params[:post_id]
 	@comment_body = params[:comment]
 	@new_comment = Comment.create(body: @comment_body, user_id: @user_id, post_id: @post_id)
-	redirect('/')
+	redirect back
 
 end
 

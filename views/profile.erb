@@ -41,7 +41,6 @@
 				<% @current_pets.each do |pet| %>
 					<li>
 						<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
-						<h4><%= pet.animal.capitalize %></h4>
 						<h4><%= pet.breed.capitalize %></h4>
 						<img class ="pet-image" src="<%= pet.image %>">
 					</li>
@@ -65,8 +64,8 @@
 						<p><%= post.created_at %></p>
 						<% post.comments.each do |comment| %>
 						<% user = User.find(comment.user_id) %>
-							<p class= "comment-name"><%= user.user_name.capitalize  %> commented...</p>
-							<h4><%= comment.body %></h4>
+							<h4><%= user.user_name.capitalize  %> commented...</h4>
+							<p class= "comment-name"><%= comment.body %></p>
 							<p><%= comment.created_at %></p>
 						<% end %>
 						<form action="/addcomment" method = "post">
