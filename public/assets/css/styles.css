@@ -8,7 +8,7 @@
 
 .profile_container {
   margin: auto;
-  text-align: center; /*to center form*/
+  text-align: center;
   position: relative;
   display: block;
   background: rgb(240,249,255); /* Old browsers */
@@ -44,6 +44,7 @@
 .profile-nav li {
   padding-right: 20px;
   display: inline;
+
 }
 
 .profile-nav ul a {
@@ -57,9 +58,6 @@
   text-decoration: underline;
 
 }
-
-
-
 
 .site-title {
 	background-color: black;
@@ -117,40 +115,43 @@ li p {
 
 .list-display a{
 	color: #EEC015;
+
 }
 
 .list-display p {
   color: #EEC015;
+
 }
 
 textarea {
-width: 300px ;
-height: 100px;
+  width: 300px ;
+  height: 100px;
 
 }
 
 .profile-pets {
   margin-top: -150px;
- /* border-top: 3px solid black;*/
 
 }
 
 .profile-posts a {
   display: block;
+
 }
 
 .hoods ul li a {
   color: black;
+
 }
 
 .comment-name {
   font-size: 24px;
   color: green;
-  /**/
+
 }
 
 
-.rotate{
+.rotate {
     -webkit-transition-duration: 0.8s;
     -moz-transition-duration: 0.8s;
     -o-transition-duration: 0.8s;
@@ -162,12 +163,12 @@ height: 100px;
     transition-property: transform;
      
     overflow:hidden;
+
+}  
  
-    }  
- 
-.rotate:hover  
-{
+.rotate:hover {
     -webkit-transform:rotate(360deg);
     -moz-transform:rotate(360deg);
     -o-transform:rotate(360deg);
+    
 }  
