@@ -3,6 +3,6 @@
 	<li>
 		<h3><%= post.body %></h3>
 		<img class ="pet-image" src ="<%=post.image %>">
-		<p><%= post.created_at %></p>
+		<p><%= Kronic.format(post.created_at) %></p>
 	</li>
 </ul>

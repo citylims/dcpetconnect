@@ -62,12 +62,12 @@
 						<p><%= tag.body %></p>
 							<% end %>
 						<h3><%= post.body %></h3>
-						<p><%= post.created_at %></p>
+						<p><%= Kronic.format(post.created_at) %></p>
 						<% post.comments.each do |comment| %>
 						<% user = User.find(comment.user_id) %>
 							<h4><%= user.user_name.capitalize  %> commented...</h4>
 							<p class= "comment-name"><%= comment.body %></p>
-							<p><%= comment.created_at %></p>
+							<p><%= Kronic.format(comment.created_at) %></p>
 						<% end %>
 						<form action="/addcomment" method = "post">
 						  <legend>Comment</legend>

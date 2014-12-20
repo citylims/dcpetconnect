@@ -14,7 +14,7 @@
 			<% @post.each do |post| %>
 					<li>
 						<h3><%= post.body %></h3>
-						<h3><%= post.created_at %></h3>
+						<h3><%= Kronic.format(post.created_at) %></h3>
 						<img class ="pet-image" src="<%= post.image %>">
 						<% if session[:user_id] == post.user_id %>
 						<div>
