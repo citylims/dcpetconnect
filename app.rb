@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'bcrypt'
-# require 'sinatra/reloader'
+require 'kronic'
 require 'pry'
 
 # require 'sinatra/activerecord'
@@ -17,6 +17,7 @@ require_relative './config/environments'
 
 
 enable :sessions
+
 
 helpers do
 	def current_user
@@ -167,7 +168,6 @@ get '/users/:user_name' do
 	@current_id = @current.id
 	@current_pets = Pet.where(user_id: @current_id)
 	@current_posts = Post.where(user_id: @current_id)
-	# @name = @current.user_name
 	erb :profile
 end
 
