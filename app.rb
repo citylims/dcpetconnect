@@ -257,7 +257,7 @@ delete "/delete_pet" do
 	@pet_id = params[:pet_to_delete]
 	@deletion_pet = Pet.find(@pet_id)
 	if @deletion_pet.delete
-	redirect('/users')
+	redirect back
 	else
 		puts "not working"
 	end
