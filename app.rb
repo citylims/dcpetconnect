@@ -246,7 +246,7 @@ put "/update_pet/:pet_name" do
 		new_image = params[:new_image]
 		update_pet.image = new_image
 		update_pet.save
-		redirect('/pets')
+		redirect back
 		else
 		redirect('/users')
 	end
