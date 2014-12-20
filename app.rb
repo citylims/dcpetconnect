@@ -13,7 +13,7 @@ require_relative './models/tag'
 require_relative './models/tagging'
 require_relative './config/environments'
 
-binding.pry
+# binding.pry
 
 
 enable :sessions
