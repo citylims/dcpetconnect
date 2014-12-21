@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	# validates_presence_of :user_name, :email, :password_digest, presence: true
+	validates_presence_of :user_name, :email, :password_digest, :neighborhood, presence: true
 	has_many :posts, dependent: :destroy
 	has_many :pets, dependent: :destroy
 	has_many :comments, dependent: :destroy
