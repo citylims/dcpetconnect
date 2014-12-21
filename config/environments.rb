@@ -1,4 +1,3 @@
-
 configure :production, :development do
 db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/petconnect_db')
 ActiveRecord::Base.establish_connection(
