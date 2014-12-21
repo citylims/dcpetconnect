@@ -1,26 +1,26 @@
 <div class="page">
   <div class="primary_content">
-        <div class="site_title">
-          <span>Delete Account</span>
-        </div>
-        <nav class="menu">
-          <ul>
-            <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
-            <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
-            <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
-          </ul>
-        </nav> 
-        <div class="signup">
-        	<h2><%= @user.user_name.capitalize %></h2>
-            <h3>Delete account</h3>
-			<form action="/delete" method="post">
-				<input name="_method" type="hidden" value="delete" />
-				<input type="hidden" value="<%= @user.id %>" name="user_to_delete">
-				<input class = "fs" type="submit" placeholder="delete">
-			</form>
+    <div class="site_title">
+      <span>Delete Account</span>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
+        <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
+        <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
+      </ul>
+    </nav> 
+    <div class="signup">
+      <h2><%= @user.user_name.capitalize %></h2>
+      <h3>Delete account</h3>
+		  <form action="/delete" method="post">
+			  <input name="_method" type="hidden" value="delete" />
+			  <input type="hidden" value="<%= @user.id %>" name="user_to_delete">
+			  <input class = "fs" type="submit" placeholder="delete">
+		  </form>
 		</div>
-	</li>
-</ul>
+  </div>
+</div>
 
 
 
