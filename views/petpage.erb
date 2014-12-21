@@ -1,43 +1,43 @@
 <div class="page">
 	<div class="primary_content">
 		<div class="site_title">
-      		<span><%= @pet.name %></span>
-    	</div>
-	    <nav class="menu">
-        	<ul>
-	          <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
-	          <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
-	          <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
-        	</ul>
-      	</nav>
+      <span><%= @pet.name %></span>
+    </div>
+	  <nav class="menu">
+      <ul>
+	      <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
+	      <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
+	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
+      </ul>
+    </nav>
 		<ul>
 			<% @pet.each do |pet| %>
-					<li>
-						<h3><%= pet.pet_name %></h3>
-						<h4><%= pet.animal %><h4>
-						<h4><%= pet.breed %></h4>
-						<img class ="pet-image" src="<%= pet.image %>">
-						<% if session[:user_id] == pet.user_id %>
-						<div>
-							<form action="/update_pet/<%= pet.pet_name %>" method = "post">
-								<input type="hidden" value ="put" name="_method">
-								<input type="hidden" value ="<%= pet.id %>" name="pet_id">
-								<legend>Update Pet Photo</legend>
-								<input type="text" placeholder="url" name="new_image"> 
-								<input class = "fs" type="submit" placeholder="update">
-							</form>
-						</div>
-						<div>
-							<form action="/delete_pet" method="post">
-								<legend>Delete PET?</legend>
-								<input name="_method" type="hidden" value="delete" />
-								<input type="hidden" value="<%= pet.id %>" name="pet_to_delete">
-								<input class = "fs" type="submit" placeholder="delete">
-							</form>
-						</div>
-						<% else %>
-						<% end %>
-					</li>
+			<li>
+				<h3><%= pet.pet_name %></h3>
+				<h4><%= pet.animal %><h4>
+				<h4><%= pet.breed %></h4>
+				<img class ="pet-image" src="<%= pet.image %>">
+				<% if session[:user_id] == pet.user_id %>
+				<div>
+					<form action="/update_pet/<%= pet.pet_name %>" method = "post">
+						<input type="hidden" value ="put" name="_method">
+						<input type="hidden" value ="<%= pet.id %>" name="pet_id">
+						<legend>Update Pet Photo</legend>
+						<input type="text" placeholder="url" name="new_image"> 
+						<input class = "fs" type="submit" placeholder="update">
+					</form>
+				</div>
+				<div>
+					<form action="/delete_pet" method="post">
+						<legend>Delete PET?</legend>
+						<input name="_method" type="hidden" value="delete" />
+						<input type="hidden" value="<%= pet.id %>" name="pet_to_delete">
+						<input class = "fs" type="submit" placeholder="delete">
+					</form>
+				</div>
+				<% else %>
+				<% end %>
+			</li>
 			<% end %>
 		</ul>
 	</div>

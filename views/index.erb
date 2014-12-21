@@ -1,61 +1,57 @@
-
 <div class="page">
-    <div class="primary_content">
-      <div class="site_title">
+  <div class="primary_content">
+    <div class="site_title">
       <span>DC PET CONNECTION</span>
     </div>
-      <div class="menu">
-        <ul>
-          <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
-          <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
-          <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="#log">CONNECT</a></li>
-        </ul>
-      </div>
-      <section>
-        <h1>Pet Connection</h1>
-        <div class="bio_frame">
-          <div class= "home_photo">
-          </div>
-          <a href="#"><img class="bio_image" src="<%= @selected_pet %>" alt="Random_Pet" /></a>
-          <% if @selected_pet %>
-          <p class="caption">Meet "<%= @front_pet.capitalize %>" From "<%= @pet_hood.capitalize %>"</p>
-          <% else %>
-          <p class="caption">Meet " " From " "</p>
-          <% end %>
-        </div>
-        <div class="about">
-          <div class="login">
-            <div id="log"></div>
-            <h2>Log In</h2>
-            <form action="/login" method = "post">
-              <legend>Email</legend>
-              <input type="text" placholder="email" name="email">
-              <legend>Password</legend>
-              <input type="password" placeholder="password" name="password">
-              <input class = "fs" type="submit" placeholder="Log In">
-            </form>
-          </div>
-            <a href= "/signup">Sign Up Page</a>
-      			<a href="/session/logout">Logout</a>
-            <a href="#">Search</a>
-        </div>
-
-      </section>
-      <div class="bottom">
-        <article class="social_nav">
-          <h2>Follow Us!</h2>
-          <div class="social_icons">
-            <a href="#"><img src="http://i.imgur.com/An6roBl.png" alt="icon"/></a>
-            <a href="#"><img src="http://i.imgur.com/mwFOANR.png" alt="icon"/></a>
-            <a href="#"><img src="http://i.imgur.com/AKuOART.png" alt="icon"/></a>
-            <a href="#"><img src="http://i.imgur.com/xCFityT.png" alt="icon"/></a>
-            <a href="#"><img src="http://i.imgur.com/WgXSaxC.png" alt="icon"/></a>
-            <a href="#"><img src="http://i.imgur.com/IAD9917.png" alt="icon"/></a>
-          </div>
-        </article>
-      </div>
+    <div class="menu">
+      <ul>
+        <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
+        <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
+        <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="#log">CONNECT</a></li>
+      </ul>
     </div>
-    <div class="footer">
-      <p class="author">Site Designed by Austin Formica 2014</p>
+    <section>
+      <h1>Pet Connection</h1>
+      <div class="bio_frame">
+        <a href="#"><img class="bio_image" src="<%= @selected_pet %>" alt="Random_Pet" /></a>
+        <% if @selected_pet %>
+        <p class="caption">Meet "<%= @front_pet.capitalize %>" From "<%= @pet_hood.capitalize %>"</p>
+        <% else %>
+        <p class="caption">Meet " " From " "</p>
+        <% end %>
+      </div>
+      <div class="about">
+        <div class="login">
+          <div id="log"></div>
+          <h2>Log In</h2>
+          <form action="/login" method = "post">
+            <legend>Email</legend>
+            <input type="text" placholder="email" name="email">
+            <legend>Password</legend>
+            <input type="password" placeholder="password" name="password">
+            <input class = "fs" type="submit" placeholder="Log In">
+          </form>
+        </div>
+          <a href= "/signup">Sign Up Page</a>
+      		<a href="/session/logout">Logout</a>
+          <a href="#">Search</a>
+      </div>
+    </section>
+    <div class="bottom">
+      <article class="social_nav">
+        <h2>Follow Us!</h2>
+        <div class="social_icons">
+          <a href="#"><img src="http://i.imgur.com/An6roBl.png" alt="icon"/></a>
+          <a href="#"><img src="http://i.imgur.com/mwFOANR.png" alt="icon"/></a>
+          <a href="#"><img src="http://i.imgur.com/AKuOART.png" alt="icon"/></a>
+          <a href="#"><img src="http://i.imgur.com/xCFityT.png" alt="icon"/></a>
+          <a href="#"><img src="http://i.imgur.com/WgXSaxC.png" alt="icon"/></a>
+          <a href="#"><img src="http://i.imgur.com/IAD9917.png" alt="icon"/></a>
+        </div>
+      </article>
     </div>
+  </div> <!-- primary_content -->
+  <div class="footer">
+    <p class="author">Site Designed by Austin Formica 2014</p>
   </div>
+</div>
