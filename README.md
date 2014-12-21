@@ -7,3 +7,5 @@ Is a web app designed to connect pet owners in Washington DC. After creating an 
 
 DC Pet Connection is a Sinatra app built with Ruby, HTML, CSS, Postgresql, ActiveRecord, Bcrypt, Kronic, and is deployed with Heroku.
 
+ERD = http://i.imgur.com/2vOq7GS.png
+
