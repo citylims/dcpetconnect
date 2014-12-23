@@ -12,7 +12,7 @@
     </nav>
 		<div class="profile-header">
 			<h2 class= "profile-name"><%= @current.user_name.capitalize %></h2>
-			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
+			<h2 class="profile-hood"><%= @current.neighborhood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></h2>
 		</div>
 		<% if session[:user_id] == @current_id %>
 			<nav class="menu"> 
