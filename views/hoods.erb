@@ -12,11 +12,11 @@
     </nav>	
     <ul> 
     	<% @hoods.each do |hood| %>
-    	<li><a href="hoods/<%= hood %>"><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %><a>
-
-    	</li>
-    </ul>
+    	<li>
+    		<a href="hoods/<%= hood %>"><p><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></p><a>
+			</li>
     	<% end %>
+    </ul>
 	</div>
 </div>
 
