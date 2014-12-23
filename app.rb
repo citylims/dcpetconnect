@@ -270,13 +270,13 @@ end
 
 
 get '/hoods' do 
-	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
+	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth", "takoma"]
 	erb :hoods
 end
 
 
 get "/hoods/:neighborhood" do 
-	@hoods=["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth" ,"takoma"]
+	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth", "takoma"]
 	@neighborhood = params[:neighborhood]
 
 	if @hoods.include?(@neighborhood)
@@ -311,4 +311,3 @@ post "/addpost" do
 	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
 	redirect('/')
 end
-
