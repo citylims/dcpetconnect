@@ -1,29 +1,37 @@
 <div class="page">
 	<div class="primary_content">
 		<div class="site_title">
-      		<span>User - <%= @current.user_name.capitalize %></span>
-      	</div>
-	    <nav class="menu">
-        	<ul>
-	          <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
-	          <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
-	          <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
-        	</ul>
-      	</nav>
+      <span>User - <%= @current.user_name.capitalize %></span>
+    </div>
+	  <nav class="menu">
+      <ul>
+	      <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
+	      <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
+	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
+      </ul>
+    </nav>
 		<div class="profile-header">
 			<h2 class= "profile-name"><%= @current.user_name.capitalize %></h2>
 			<h2 class="profile-hood"><%= @current.neighborhood %></h2>
-			<% if session[:user_id] == @current_id %>
 		</div>
-		<div class="menu">
-        	<ul>
-	          <li><a href="/addpet">Add a pet</a></li>
-	          <li><a href="/addpost">Create a post</a></li>
-	          <li><a href="/delete">Delete Account</a><h2></li>
-        	</ul>
-      	</div>
-			<% else %>
-			<% end %>
+		<% if session[:user_id] == @current_id %>
+			<nav class="menu"> 
+	      <ul>
+		      <li><a href="/addpet">Add a pet</a></li>
+		      <li><a href="/addpost">Create a post</a></li>
+		      <li><a href="/delete">Delete Account</a><h2></li>
+	      </ul>
+	    </nav>
+		<% else %>
+		<!-- bug -->
+		<nav class="menu">
+      <ul>
+	      <li><a href="/">Add a pet</a></li>
+	      <li><a href="/">Create a post</a></li>
+	      <li><a href="/">Delete Account</a><h2></li>
+      </ul>
+    </nav>
+		<% end %>
 		<div class ="profile-pets">
 			<a href = "#pets">Pets</a>
 			<a href = "#posts">Posts</a>
@@ -32,12 +40,11 @@
 			</div>
 			<ul>
 				<% @current_pets.each do |pet| %>
-					<li>
-						<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
-						<h4><%= pet.animal.capitalize %></h4>
-						<h4><%= pet.breed.capitalize %></h4>
-						<img class ="pet-image" src="<%= pet.image %>">
-					</li>
+				<li>
+					<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
+					<h4><%= pet.breed.capitalize %></h4>
+					<img class ="pet-image" src="<%= pet.image %>">
+				</li>
 				<% end %>
 			</ul>
 		</div>
@@ -47,31 +54,31 @@
 			</div>
 			<div class="posts">
 				<ul>
-				<% @current_posts.each do |post| %>
+					<% @current_posts.each do |post| %>
 					<li>
-						<img class ="pet-image" src="<%= post.image %>">
-						<% tags = post.tags %>
-							<% tags.each do |tag| %>
+					<img class ="pet-image" src="<%= post.image %>">
+					<% tags = post.tags %>
+						<% tags.each do |tag| %>
 						<p><%= tag.body %></p>
-							<% end %>
-						<h3><%= post.body %></h3>
-						<p><%= post.created_at %></p>
-						<% post.comments.each do |comment| %>
-						<% user = User.find(comment.user_id) %>
-							<p class= "comment-name"><%= user.user_name.capitalize  %> commented...</p>
-							<h4><%= comment.body %></h4>
-							<p><%= comment.created_at %></p>
 						<% end %>
-						<form action="/addcomment" method = "post">
-						  <legend>Comment</legend>
-						  <input type="hidden" value="<%= post.id %>" name="post_id">
-						  <input type="text" placholder="Comment..." name="comment">
-						  <input class = "fs" type="submit" placeholder="Create">
-						</form>
-						<% if session[:user_id] == @current_id %>
+					<h3><%= post.body %></h3>
+					<p><%= Kronic.format(post.created_at) %></p>
+					<% post.comments.each do |comment| %>
+					<% user = User.find(comment.user_id) %>
+					<h4><%= user.user_name.capitalize  %> commented...</h4>
+					<p class= "comment-name"><%= comment.body %></p>
+					<p><%= Kronic.format(comment.created_at) %></p>
+					<% end %>
+					<form action="/addcomment" method = "post">
+						<legend>Comment</legend>
+						<input type="hidden" value="<%= post.id %>" name="post_id">
+						<input type="text" placholder="Comment..." name="comment">
+						<input class = "fs" type="submit" placeholder="Create">
+					</form>
+					<% if session[:user_id] == @current_id %>
 						<a href="/posts/<%= post.id %>">delete post</a>
-						<% else %>
-						<% end %>
+					<% else %>
+					<% end %>
 					</li>
 				<% end %>
 				</ul>
