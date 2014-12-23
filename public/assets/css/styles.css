@@ -18,21 +18,19 @@
   background: -o-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* IE10+ */
   background: linear-gradient(to bottom,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* W3C */
-  height: 1000px;
-  width: 750px;
   border-top-left-radius: 16%;
   border-top-right-radius: 16%;
 
 }
 
 .profile-name {
-	color: #141C22;
+  color: #141C22;
 
 }
 
 .profile-hood {
-	margin-top: -80px;
-	color: #141C22;
+  margin-top: -80px;
+  color: #141C22;
 
 }
 
@@ -60,17 +58,17 @@
 }
 
 .site-title {
-	background-color: black;
-	width: 80%;
-	height: 50px;
+  background-color: black;
+  width: 80%;
+  height: 50px;
 
 }
 
 .signup {
   border: 10%;
   padding-top: ;
-	margin: auto;
-	text-align:  center;
+  margin: auto;
+  text-align:  center;
   width: 750px;
   height: 400px;
   background-color: #141C22;
@@ -79,9 +77,9 @@
 
 .signup a {
   margin: auto;
-	display: block;
-	clear: both;
-	font-size: 30px;
+  display: block;
+  clear: both;
+  font-size: 30px;
   max-width: 200px;
 
 }
@@ -99,22 +97,22 @@ h2.page-title {
 
 }
 
-li p {
-	padding-left: 10px;
-	color: #EEC015;
+li a p {
+  padding-left: 10px;
+  color: black;
   font-weight: bold;
 
 }
 
 
 .profile-header {
-	margin-top: -100px;
+  margin-top: -100px;
 
 }
 
 
 .list-display a{
-	color: #EEC015;
+  color: #EEC015;
 
 }
 
@@ -131,10 +129,8 @@ textarea {
 
 .profile-pets {
   margin-top: -150px;
-<<<<<<< HEAD
+
   border-top: 3px solid black;
-=======
->>>>>>> 236ac4d838e5746df468ead0a41445219588ff5c
 
 }
 
@@ -155,23 +151,23 @@ textarea {
 }
 
 .rotate {
-    -webkit-transition-duration: 0.8s;
-    -moz-transition-duration: 0.8s;
-    -o-transition-duration: 0.8s;
-    transition-duration: 0.8s;
-     
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-     
-    overflow:hidden;
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+   
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+   
+  overflow:hidden;
 
 }  
  
 .rotate:hover {
-    -webkit-transform:rotate(360deg);
-    -moz-transform:rotate(360deg);
-    -o-transform:rotate(360deg);
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+  -o-transform:rotate(360deg);
     
 }  
