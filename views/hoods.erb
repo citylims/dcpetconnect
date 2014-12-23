@@ -10,17 +10,13 @@
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
     </nav>	
-    <ul>
-			<li><a href= "hoods/capitolhill"><p>Capitol Hill</p></a></li>
-			<li><a href= "hoods/clevelandwoodley"><p>Cleveland/Woodley Park</p></a></li>
-			<li><a href= "hoods/glovergeorgetown"><p>Gloverpark/Georgetown</p></a></li>
-			<li><a href= "hoods/mtpleasantcolumbiaheights"><p>Mt. Pleasant/Columbia Heights</p></a></li>
-			<li><a href= "hoods/dupontcircle"><p>Dupont Circle</p></a></li>
-			<li><a href= "hoods/shawbloomingdale"><p>Shaw/Bloomingdale</p></a></li>
-			<li><a href= "hoods/tenleytown"><p>Tenleytown/Friendship Heights</p></a></li>
-			<li><a href= "hoods/petworth"><p>Petworth</p></a></li>
-			<li><a href= "/hoods/takoma"><p>Takoma Park</p></a></li>
-		</ul>
+    <ul> 
+    	<% @hoods.each do |hood| %>
+    	<li><a href="hoods/<%= hood %>"><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %><a>
+
+    	</li>
+    </ul>
+    	<% end %>
 	</div>
 </div>
 

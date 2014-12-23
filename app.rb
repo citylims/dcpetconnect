@@ -75,6 +75,7 @@ end
 
 
 get '/signup' do 
+  @hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
   
   erb :signup
 end
@@ -270,13 +271,14 @@ end
 
 
 get '/hoods' do 
-	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth", "takoma"]
-	erb :hoods
+	@hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
+
+  erb :hoods
 end
 
 
 get "/hoods/:neighborhood" do 
-	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth", "takoma"]
+	@hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
 	@neighborhood = params[:neighborhood]
 
 	if @hoods.include?(@neighborhood)
