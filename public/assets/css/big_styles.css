@@ -114,12 +114,13 @@ p {
 
 a {
   color: black;
+  font-size: 1.5em;
 
 }
 
 span {
   color: #BF0000;
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: bold;
   font-family: 'Roboto Condensed', serif;
   text-transform: uppercase;
@@ -143,8 +144,9 @@ span {
 
 .site_title {
   line-height: 15px;
-  padding-left: 40px;
   margin-top: -40px;
+  border-bottom: 2px solid black;
+
 
 }
 
@@ -163,8 +165,9 @@ span {
 
 .menu ul a {
   text-decoration: none;
-  margin-left: 20px;
+  padding-left: 10px;
   text-align: center;
+  font-weight: bold;
 
 }
 
