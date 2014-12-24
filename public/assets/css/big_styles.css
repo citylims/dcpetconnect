@@ -136,12 +136,13 @@ span {
   background-size: cover;
   padding: 75px;
   margin-top: 5px;
+  float: left;
 
 }
 
 .page {
-  margin: 0 auto 0 auto;
-  width: 900px;
+  margin: 0 auto;
+
 
 }
 
