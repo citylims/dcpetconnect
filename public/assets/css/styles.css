@@ -76,14 +76,9 @@
  
 }
 
-.login-links a {
-  color: white;
-  font-size: 1.25em;
-  padding-right: 10px;
-}
 
 
-h2.page-title {
+.page-title h2 {
   color: #FF6633;
   font-family: 'Roboto Condensed', serif;
   text-decoration: underline;
@@ -215,4 +210,66 @@ aside h4 {
 .sidebar p {
   color: red;
   font-size: 14px;
+}
+
+footer {
+  overflow-x: hidden;
+  background: #606060;
+  width: 98.5%;
+  margin: 0 auto;
+  padding: 0.25em 0.625em;
+  clear: both;
+}
+
+footer h2 {
+    color: white;
+}
+
+footer p {
+  color: white;
+  padding-left: 1em;
+}
+
+.bio {
+  max-width: 100%;
+}
+
+.bio-image {
+  display:inline;
+  float: left;
+  padding-right: 1em;
+}
+
+.bio-image img {
+  max-height: 300px;
+  max-width: 300px;
+  padding-top: 10px;
+
+}
+
+.social_icons img {
+  margin-left: 20px;
+  
+}
+
+.login{
+  float: left;
+}
+.login h2 {
+  padding-top: 10px;
+  color: #BF0000;
+  text-shadow: 2px 2px #F2EEE2;
+  font-family: 'Merriweather';
+  text-decoration: none;
+
+}
+
+.login-links a {
+  color: white;
+  font-size: 1.25em;
+  padding-right: 10px;
+}
+
+.sign {
+  
 }

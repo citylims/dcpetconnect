@@ -1,9 +1,10 @@
 /*Global selectors*/
 body {
   font-family: 'Merriweather', Georgia, serif;
-  background-color: #EBF7FF;
+  background-color: black;
   overflow-y: auto;
   overflow-x: hidden;
+  max-width: 1500px
 
 }
 
@@ -46,9 +47,7 @@ h2{
   font-family: 'Roboto Condensed', serif;
   text-decoration: underline;
   text-align: center;
-  font-size: 40px;
-  padding-top: 40px;
-  margin-top: 80px;
+  font-size: 60px;
   width: 750px;
 
 }
@@ -82,8 +81,10 @@ form {
   width: 200px;
   margin: auto 0;
   display: inline-block; 
-  color: #BF0000;
-
+}
+form legend {
+  color:white;
+  text-shadow: 3px 3px #BF0000;
 }
 
 input {
@@ -201,8 +202,9 @@ span {
 .about {
   margin: 0 auto;
   width: 750px;
-  height: 350px;
+  height: 400px;
   background-color: #141C22;
+  border-bottom: 4px solid black;
   
 }
 
@@ -218,7 +220,7 @@ p#thanks {
 
 .fs {
   width: 210px;
-  padding: 10px 15px 11px;
+  padding: 10px 15px 11px 10px;
   font-size: 18px;
   background-color: white;
   font-weight: bold;
@@ -261,14 +263,3 @@ p.author {
 
 }
 
-article.social_nav {
-  margin-top: -50px;
-
-}
-
-div.social_icons {
-  padding: 0 30px;
-  margin-left: 50px;
-  width: 1000px;
-  
-}

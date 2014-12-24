@@ -27,7 +27,7 @@
         <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
         <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="#log">CONNECT</a></li>
       </ul>
-    </div>
+    </div> <!-- menu -->
     <section>
       <h1>Pet Connection</h1>
       <div class="bio_frame">
@@ -49,7 +49,26 @@
             <input type="password" placeholder="password" name="password">
             <input class = "fs" type="submit" placeholder="Log In">
           </form>
-        </div>
+          <h3 class="form-header">Sign up</h3>
+          <form class="sign" action="/signup" method = "post">
+            <legend>User Name</legend>
+            <input type="text" placeholder="UserName" name="username" required>
+            <legend>Email</legend>
+            <input type="text" placholder="Email" name="email" required>
+            <legend>Password</legend>
+            <input type="password" placeholder="Password" name="password" required>
+            <legend>Select Your Neighborhood</legend>
+            <select name="neighborhood" placeholder="DC Neighborhoods">
+              <% @hoods.each do |hood| %>
+              <option value="<%= hood %>"><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></option>
+              <% end %>
+            </select>
+            <br>
+            <br>
+            <input class = "fs" type="submit" placeholder="Log In">
+          </form>
+        </div> <!-- login -->
+      </div> <!-- about -->
         <div class="login-links">
           <a href= "/signup">Sign Up Page</a>
       		<a href="/session/logout">Logout</a>
@@ -57,21 +76,22 @@
         </div>
       </div>
     </section>
-    <div class="bottom">
-      <article class="social_nav">
-        <h2>Follow Us!</h2>
-        <div class="social_icons">
-          <a href="#"><img src="http://i.imgur.com/An6roBl.png" alt="icon"/></a>
-          <a href="#"><img src="http://i.imgur.com/mwFOANR.png" alt="icon"/></a>
-          <a href="#"><img src="http://i.imgur.com/AKuOART.png" alt="icon"/></a>
-          <a href="#"><img src="http://i.imgur.com/xCFityT.png" alt="icon"/></a>
-          <a href="#"><img src="http://i.imgur.com/WgXSaxC.png" alt="icon"/></a>
-          <a href="#"><img src="http://i.imgur.com/IAD9917.png" alt="icon"/></a>
-        </div>
-      </article>
-    </div>
-  </div> <!-- primary_content -->
-  <div class="footer">
-    <p class="author">Site Designed by Austin Formica 2014</p>
   </div>
-</div>
+    <footer class="footer-bio">
+      <div class="bio-image">
+        <img src="http://i.imgur.com/EAnaWGm.jpg">
+      </div>
+      <div class="bio">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Conversam militaris suavitate iudicante administrari praeterea per conversa, suo priventur, cupiditate dicantur praetorem praetermittenda, reici neque manilium scaevolam soleat graeci inesse, cives meque reprimique animumque iucunditas contentam dicitur consecutus, seiunctum hominum statuerunt, tradidisse fingi ipse cupiditate saepe copulationes, ero lectorem, declinatio notissima. Bonarum pulchraeque atomos requietis.</p>
+      </div>
+      <div class="social_icons">
+        <a href="#"><img src="http://i.imgur.com/An6roBl.png" alt="icon"/></a>
+        <a href="#"><img src="http://i.imgur.com/mwFOANR.png" alt="icon"/></a>
+        <a href="#"><img src="http://i.imgur.com/AKuOART.png" alt="icon"/></a>
+        <a href="#"><img src="http://i.imgur.com/xCFityT.png" alt="icon"/></a>
+        <a href="#"><img src="http://i.imgur.com/WgXSaxC.png" alt="icon"/></a>
+        <a href="#"><img src="http://i.imgur.com/IAD9917.png" alt="icon"/></a>
+      </div>
+    </footer>
+  </div> <!-- primary_content -->
+</div> <!-- page -->

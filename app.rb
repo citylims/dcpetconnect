@@ -39,7 +39,7 @@ end
 #USER ROUTES
 
 get '/' do
-	
+	@hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
   @front_page_pet = Pet.pluck(:image)
   @selected_pet = @front_page_pet.sample
 
