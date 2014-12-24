@@ -36,7 +36,7 @@ h1 {
   font-weight: bold;
   text-align: center;
   text-decoration: underline;
-  text-transform: uppercase;
+ /* text-transform: uppercase;*/
   padding-top: 30px;
   line-height: 15px;
 
@@ -70,12 +70,6 @@ h3 {
 
 }
 
-.form-header {
-  font-size: 2em;
-  padding-top: 20px;
-  text-decoration: underline;
-
-}
 
 form {
   width: 200px;
@@ -88,9 +82,11 @@ form legend {
 }
 
 input {
+  font-size: 20px;
   margin-bottom: 1em;
   border: 1px solid red;
   width: 200px;
+
 
 }
 
@@ -202,9 +198,9 @@ span {
 .about {
   margin: 0 auto;
   width: 750px;
-  height: 400px;
-  background-color: #141C22;
-  border-bottom: 4px solid black;
+  height: 505px;
+  background-color: #4C4D4F;
+  /*border-bottom: 5px solid #272822;*/
   
 }
 
