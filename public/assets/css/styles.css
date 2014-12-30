@@ -65,14 +65,11 @@
 }
 
 .signup {
-  border: 10%;
-  padding-top: ;
-  margin: auto;
   text-align:  center;
-  width: 750px;
-  height: 400px;
+  width: 550px;
+  height: 500px;
   background-color: #141C22;
-  float: right;
+  float: left;
  
 }
 
