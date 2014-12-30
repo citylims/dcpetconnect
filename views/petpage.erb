@@ -10,35 +10,55 @@
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
     </nav>
-		<ul>
-			<% @pet.each do |pet| %>
-			<li>
-				<h3><%= pet.pet_name %></h3>
-				<h4><%= pet.animal %><h4>
-				<h4><%= pet.breed %></h4>
-				<img class ="pet-image" src="<%= pet.image %>">
-				<% if session[:user_id] == pet.user_id %>
-				<div>
-					<form action="/update_pet/<%= pet.pet_name %>" method = "post">
-						<input type="hidden" value ="put" name="_method">
-						<input type="hidden" value ="<%= pet.id %>" name="pet_id">
-						<legend>Update Pet Photo</legend>
-						<input type="text" placeholder="url" name="new_image"> 
-						<input class = "fs" type="submit" placeholder="update">
-					</form>
-				</div>
-				<div>
-					<form action="/delete_pet" method="post">
-						<legend>Delete PET?</legend>
-						<input name="_method" type="hidden" value="delete" />
-						<input type="hidden" value="<%= pet.id %>" name="pet_to_delete">
-						<input class = "fs" type="submit" placeholder="delete">
-					</form>
-				</div>
-				<% else %>
+    <div class ="left">
+			<ul>
+				<% @pet.each do |pet| %>
+				<li>
+					<h3><%= pet.pet_name %></h3>
+					<h4><%= pet.animal %><h4>
+					<h4><%= pet.breed %></h4>
+					<img class ="pet-image" src="<%= pet.image %>">
+					<% if session[:user_id] == pet.user_id %>
+					<div>
+						<form action="/update_pet/<%= pet.pet_name %>" method = "post">
+							<input type="hidden" value ="put" name="_method">
+							<input type="hidden" value ="<%= pet.id %>" name="pet_id">
+							<legend>Update Pet Photo</legend>
+							<input type="text" placeholder="url" name="new_image"> 
+							<input class = "fs" type="submit" placeholder="update">
+						</form>
+					</div>
+					<div>
+						<form action="/delete_pet" method="post">
+							<legend>Delete PET?</legend>
+							<input name="_method" type="hidden" value="delete" />
+							<input type="hidden" value="<%= pet.id %>" name="pet_to_delete">
+							<input class = "fs" type="submit" placeholder="delete">
+						</form>
+					</div>
+					<% else %>
+					<% end %>
+				</li>
 				<% end %>
-			</li>
-			<% end %>
-		</ul>
+			</ul>
+		</div><!-- left -->
+		<div class="sidebar">
+      <aside class="hoods-aside">
+        <h4>About Us</h4>
+        <p>neque tale monstret optimus divitiarum nacti tempora, eorumque desideraret malunt debilitatem pariant afranius depravatum restat contemnentes honestatis.</p>
+        <h5><a href="#">More...</a></h5>
+        <div class="side_image">
+          <img  src="http://i.imgur.com/d1cRSgA.gif">  
+        </div>
+        <h4>Get Invovled</h4>
+        <ul>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Adopt</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+        <h4>Coming Soon</h4>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Metrodorus monstret scientiam. Noster admirer canes admonere temeritas utinam plurimum primis invidiae, profecta astris vel desistemus cotidie mandaremus efficere, posuit</p>
+      </aside>
+    </div>
 	</div>
 </div>
