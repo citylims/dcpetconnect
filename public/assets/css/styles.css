@@ -103,11 +103,13 @@ textarea {
 
 .profile-pets {
   border-bottom: 2px solid black;
+  padding-left: 20px;
 
 }
 
 .profile-posts a {
   display: block;
+  padding-left: 35px;
   border-bottom: 2px solid black;
 
 }
