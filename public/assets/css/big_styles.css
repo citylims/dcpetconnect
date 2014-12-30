@@ -70,15 +70,16 @@ h3 {
 
 }
 
-
 form {
   width: 200px;
   margin: auto 0;
   display: inline-block; 
+
 }
+
 form legend {
-  color:white;
-  text-shadow: 3px 3px #BF0000;
+  color: white;
+  
 }
 
 input {
@@ -86,7 +87,6 @@ input {
   margin-bottom: 1em;
   border: 1px solid red;
   width: 200px;
-
 
 }
 
