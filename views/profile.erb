@@ -34,10 +34,7 @@
 		<% end %>
 		<div class="left">
 			<div class="profile-pets">
-				<a href="#pets">Pets</a>
-				<a href="#posts">Posts</a>
 				<div id="pets">
-					<h3>Pets</h3>
 				</div>
 				<ul>
 					<% @current_pets.each do |pet| %>
@@ -88,13 +85,11 @@
 		</div> <!-- left -->
 		<div class="profile-bar">
 		<div class="sidebar">
-      <aside>
-      	<div class="side_image">
-      		<img src="http://i.imgur.com/ttiHmtH.jpg">
-      	</div>
-        <h4>About Us</h4>
+      <aside class="profile-aside">
+        <h4>About <%= @current.user_name.capitalize %> </h4>
         <p>neque tale monstret optimus divitiarum nacti tempora, eorumque desideraret malunt debilitatem pariant afranius depravatum restat contemnentes honestatis.</p>
-        <h5><a href="#">More...</a></h5>
+        <h5><a href="#pets">Pets</a></h5>
+        <h5><a href="#posts">Posts</a></h5>
         <div class="side_image">
           <img  src="http://i.imgur.com/d1cRSgA.gif">  
         </div>

@@ -105,7 +105,7 @@ textarea {
 }
 
 .profile-pets {
-  margin-top: -150px;
+  
   border-bottom: 2px solid black;
 
 }
@@ -159,6 +159,11 @@ textarea {
   float: right;
 }
 
+aside {
+  margin-top: 45px
+}
+
+
 aside a {
   font-size: 1em;
 
@@ -169,6 +174,15 @@ aside h4 {
   text-align: left;
   border-bottom: 1px solid black;
 
+}
+
+.hoods-aside{
+
+  margin-top: -45px;
+}
+
+.profile-aside{
+  margin-top: -350px;
 }
 
 .side_image {
@@ -201,6 +215,10 @@ aside h4 {
   color: red;
   font-size: 14px;
 
+}
+
+.sidebar h5 {
+  display: inline;
 }
 
 footer {
