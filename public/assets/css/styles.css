@@ -24,13 +24,13 @@
 }
 
 .profile-name {
-  color: #BF0000;
+  color: #191970;
 
 }
 
 .profile-hood {
-  margin-top: -80px;
-  color: #BF0000;
+  margin-top: -60px;
+  color: #191970;
 
 }
 
@@ -98,23 +98,6 @@ li a p {
 
 }
 
-
-.profile-header {
-  margin-top: -100px;
-
-}
-
-
-.list-display a{
-  color: #EEC015;
-
-}
-
-.list-display p {
-  color: #EEC015;
-
-}
-
 textarea {
   width: 300px ;
   height: 100px;
@@ -123,14 +106,18 @@ textarea {
 
 .profile-pets {
   margin-top: -150px;
-
-  border-top: 3px solid black;
+  border-bottom: 2px solid black;
 
 }
 
 .profile-posts a {
   display: block;
+  border-bottom: 2px solid black;
 
+}
+
+.profile-bar {
+  margin-top: -300px;
 }
 
 .hoods ul li a {
@@ -172,22 +159,23 @@ textarea {
   float: right;
 }
 
-aside {
-  padding-top: 2em ;
+aside a {
+  font-size: 1em;
+
 }
 
 aside h4 {
   color: #191970;
   text-align: left;
   border-bottom: 1px solid black;
+
 }
-
-
 
 .side_image {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 2em 0;
+
 }
 
 .side_image img {
@@ -206,11 +194,13 @@ aside h4 {
 .sidebar li a {
   text-decoration: none;
   color: #dd0000;
+
 }
 
 .sidebar p {
   color: red;
   font-size: 14px;
+
 }
 
 footer {
@@ -220,16 +210,19 @@ footer {
   width: 100%;
   margin: 0 auto;
   clear: both;
+
 }
 
 footer h4 {
   color: white;
   font-weight: bold;
+
 }
 
 footer p {
   color: white;
   padding-left: 1em;
+
 }
 
 .bio {
