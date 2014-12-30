@@ -269,7 +269,9 @@ footer p {
 .login{
   float: left;
   padding-bottom: 30px;
+
 }
+
 .login h2 {
   color: #BF0000;
   text-shadow: 2px 2px #F2EEE2;
@@ -278,17 +280,13 @@ footer p {
 
 }
 
-.login-links {
-
-}
-
 .login-links a {
-  margin-top: -1000px;
-  border-bottom: 2px solid black;
+  /*margin-top: -1000px;*/
   color: white;
   text-decoration: none;
   font-size: 2em;
   padding-right: 10px;
+
 }
 
 .left {
