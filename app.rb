@@ -306,10 +306,19 @@ post '/addcomment' do
 	redirect back
 end
 
-post "/addpost" do
+post '/addpost' do
 	@user_id = session[:user_id]
 	@new_post = params[:new_post]
 	@post_image = params[:post_image]
 	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
 	redirect('/')
+end
+
+
+#Vendors
+
+get '/vendors' do
+  @user= User.find(session[:user_id])
+  @username = @user.user_name
+  erb :vendors
 end

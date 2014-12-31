@@ -301,6 +301,11 @@ footer p {
 
 }
 
+.right {
+  float: right ;
+  display: inline;
+}
+
 .list-display {
   padding-left: 150px;
 
@@ -310,3 +315,4 @@ footer p {
   width: 300px;
   height: 400px;
 }
+

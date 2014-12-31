@@ -1,7 +1,8 @@
+
 <div class="page">
 	<div class="primary_content">
 		<div class="site_title">
-	    <span><%= @neighborhood %></span>
+	    <span>Vendors</span>
 	  </div>
 	  <nav class="menu">
       <ul>
@@ -11,22 +12,26 @@
       </ul>
     </nav>
     <div class="left">
-			<ul> 
-				<% @neighborhood_pets.each do |pet| %>
-				<li>
-					<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
-					<h4><%= pet.breed %></h4>
-					<img class ="pet-image" src="<%= pet.image %>">
-				</li>
-				<% end %>
-			</ul>
+    	<h3><%= @current_user.user_name %> - <%= @current_user.neighborhood %></h3>
+    	<ul>
+    		<li><h4>DC Pet Vendors</h4></li>
+    		<li><h4>Dog Walkers/Services</h4></li>
+    		<li><h4>Shelters/Rescues</h4></li>
+    		<li><h4>Animal Hospitals</h4></li>
+    	</ul>
+    		<ul class = "right">
+    		<li><h4>DC Pet Vendors</h4></li>
+    		<li><h4>Dog Walkers/Services</h4></li>
+    		<li><h4>Shelters/Rescues</h4></li>
+    		<li><h4>Animal Hospitals</h4></li>
+    	</ul>
 		</div>
 		<div class="sidebar">
       <aside class="hoods-aside">
         <h4>Vendors</h4>
         <div id="map-canvas">
         </div>
-        <h5><a href="/vendors">More...</a></h5>
+        <h5><a href="#">More...</a></h5>
         <div class="side_image">
           <img  src="http://i.imgur.com/d1cRSgA.gif">  
         </div>
