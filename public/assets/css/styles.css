@@ -288,6 +288,12 @@ footer p {
 
 }
 
+.login-links a:hover {
+  color: #BF0000;
+}
+
+
+
 .left {
   float: left;
   padding-left: 100px;
@@ -297,4 +303,10 @@ footer p {
 
 .list-display {
   padding-left: 150px;
+
+}
+
+#map-canvas {
+  width: 300px;
+  height: 200px;
 }
