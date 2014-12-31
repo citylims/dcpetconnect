@@ -319,6 +319,6 @@ end
 
 get '/vendors' do
   @user= User.find(session[:user_id])
-  @username = @user.user_name
   erb :vendors
 end
+

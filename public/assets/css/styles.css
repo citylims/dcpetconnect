@@ -260,9 +260,25 @@ footer p {
 
 }
 
-.social_icons img {
+.social_icons {
+  height: 100px;
+  width: 1000px;
+  padding-left: 300px;
+
+}
+
+.social_icons a {
   margin-left: 20px;
+  text-decoration: none;
   
+}
+
+.social_icons span {
+  color: white;
+}
+
+.social_icons span:hover {
+  color: red;
 }
 
 .login{
@@ -303,7 +319,6 @@ footer p {
 
 .right {
   float: right ;
-  display: inline;
 }
 
 .list-display {
@@ -316,3 +331,8 @@ footer p {
   height: 400px;
 }
 
+.about_me {
+  font-size: 28px;
+  margin-bottom: 0px;
+  color: white;
+}
