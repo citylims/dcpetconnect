@@ -35,7 +35,11 @@ before do
   @current_user = User.find_by(id: session[:user_id])
 end
 
-
+class String
+  def initial
+    self[0,1]
+  end
+end
 
 #USER ROUTES
 
