@@ -169,8 +169,9 @@ get '/users' do
 end
 
 get '/users/:alpha' do
-  @alpha = params[:alpha]
-  if @alpha.length > 1
+  @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  @character = params[:alpha]
+  if @character.length > 1
     @all_users = User.all
   elsif 
     @all_users = User.all
