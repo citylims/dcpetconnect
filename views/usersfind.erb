@@ -1,0 +1,13 @@
+<div class="page">
+	<div class="primary_content">
+		<ul>
+			<% @all_users.each do |user| %>
+			<% if @alpha.length > 1 %>
+				<li><%= user.user_name %></li>
+			<% elsif user.user_name.initial == @alpha %>
+				<li><%= user.user_name %></li>
+			<%end%>
+			<% end %>
+		</ul>
+	</div>
+</div>

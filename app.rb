@@ -36,6 +36,7 @@ before do
 end
 
 
+
 #USER ROUTES
 
 get '/' do
@@ -162,6 +163,18 @@ get '/users' do
   @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   erb :users
 end
+
+get '/users/:alpha' do
+  @alpha = params[:alpha]
+  if @alpha.length > 1
+    @all_users = User.all
+  elsif 
+    @all_users = User.all
+  end
+
+  erb :usersfind
+end   
+
 
 
 get '/user/:user_name' do 
