@@ -1,28 +1,36 @@
+
 <div class="page">
 	<div class="primary_content">
 		<div class="site_title">
-      <span>Neighborhoods</span>
-   	</div>
+	    <span>Vendors</span>
+	  </div>
 	  <nav class="menu">
       <ul>
 	      <li><a href="users"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/users">USERS</a></li>
 	      <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
-    </nav>	
+    </nav>
     <div class="left">
-    <ul> 
-    	<% @hoods.each do |hood| %>
-    	<li>
-    		<a href="hoods/<%= hood %>"><p><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></p><a>
-			</li>
-    	<% end %>
-    </ul>
-   	</div> <!-- left -->
-    <div class="sidebar">
+    	<h3><%= @current_user.user_name %> - <%= @current_user.neighborhood %></h3>
+    	<ul>
+    		<li><h4>DC Pet Vendors</h4></li>
+    		<li><h4>Dog Walkers/Services</h4></li>
+    		<li><h4>Shelters/Rescues</h4></li>
+    		<li><h4>Animal Hospitals</h4></li>
+    	</ul>
+    		<ul class = "right">
+    		<li><h4>DC Pet Vendors</h4></li>
+    		<li><h4>Dog Walkers/Services</h4></li>
+    		<li><h4>Shelters/Rescues</h4></li>
+    		<li><h4>Animal Hospitals</h4></li>
+    	</ul>
+		</div>
+		<div class="sidebar">
       <aside class="hoods-aside">
-        <h4>About Us</h4>
-        <p>neque tale monstret optimus divitiarum nacti tempora, eorumque desideraret malunt debilitatem pariant afranius depravatum restat contemnentes honestatis.</p>
+        <h4>Vendors</h4>
+        <div id="map-canvas">
+        </div>
         <h5><a href="#">More...</a></h5>
         <div class="side_image">
           <img  src="http://i.imgur.com/d1cRSgA.gif">  

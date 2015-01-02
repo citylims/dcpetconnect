@@ -9,26 +9,48 @@
         <li><a href="/hoods"><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"></a><a href="/hoods">NEIGHBORHOODS</a></li>
         <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
-    </nav>    
-		<ul>
-			<% @post.each do |post| %>
-			<li>
-				<h3><%= post.body %></h3>
-				<h3><%= Kronic.format(post.created_at) %></h3>
-				<img class ="pet-image" src="<%= post.image %>">
-				<% if session[:user_id] == post.user_id %>
-				<div>
-					<form action="/delete_post" method="post">
-						<legend>Delete Post?</legend>
-						<input name="_method" type="hidden" value="delete" />
-						<input type="hidden" value="<%= post.id %>" name="post_to_delete">
-						<input class = "fs" type="submit" placeholder="delete">
-					</form>
-				</div>
-				<% else %>
-				<% end %>
-			</li>
-			<% end %>
-		</ul>
+    </nav> 
+    <div class="left">
+    	<div class="signup">   
+				<ul>
+					<% @post.each do |post| %>
+					<li>
+						<h3><%= post.body %></h3>
+						<h3><%= Kronic.format(post.created_at) %></h3>
+						<img class ="pet-image" src="<%= post.image %>">
+						<% if session[:user_id] == post.user_id %>
+						<div>
+							<form action="/delete_post" method="post">
+								<legend>Delete Post?</legend>
+								<input name="_method" type="hidden" value="delete" />
+								<input type="hidden" value="<%= post.id %>" name="post_to_delete">
+								<input class = "fs" type="submit" placeholder="delete">
+							</form>
+						</div>
+						<% else %>
+						<% end %>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+		</div><!-- left -->
+		<div class="sidebar">
+      <aside class="hoods-aside">
+        <h4>About Us</h4>
+        <p>neque tale monstret optimus divitiarum nacti tempora, eorumque desideraret malunt debilitatem pariant afranius depravatum restat contemnentes honestatis.</p>
+        <h5><a href="#">More...</a></h5>
+        <div class="side_image">
+          <img  src="http://i.imgur.com/d1cRSgA.gif">  
+        </div>
+        <h4>Get Invovled</h4>
+        <ul>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Adopt</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+        <h4>Coming Soon</h4>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Metrodorus monstret scientiam. Noster admirer canes admonere temeritas utinam plurimum primis invidiae, profecta astris vel desistemus cotidie mandaremus efficere, posuit</p>
+      </aside>
+    </div>
 	</div>
 </div>

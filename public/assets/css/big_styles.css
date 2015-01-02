@@ -1,9 +1,10 @@
 /*Global selectors*/
 body {
   font-family: 'Merriweather', Georgia, serif;
-  background-color: #EBF7FF;
+  background-color: black;
   overflow-y: auto;
   overflow-x: hidden;
+  max-width: 1500px
 
 }
 
@@ -20,33 +21,33 @@ section {
   background: linear-gradient(to bottom,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* W3C */
   height: 1000px;
   width: 750px;
+  margin-top: -25px;
   border-top-left-radius: 16%;
   border-top-right-radius: 16%;
+
 
 
 }
 
 h1 {
   font-family: 'Roboto Condensed', serif;
-  color: #BF0000;
+  color: #191970;
   font-size: 4em;
   font-weight: bold;
   text-align: center;
   text-decoration: underline;
-  text-transform: uppercase;
+ /* text-transform: uppercase;*/
   padding-top: 30px;
   line-height: 15px;
 
 }
 
-h2{
+h2 {
   color: #BF0000;
   font-family: 'Roboto Condensed', serif;
   text-decoration: underline;
   text-align: center;
-  font-size: 40px;
-  padding-top: 40px;
-  margin-top: 80px;
+  font-size: 60px;
   width: 750px;
 
 }
@@ -54,7 +55,6 @@ h2{
 h2.page-title {
   color: #FF6633;
   font-family: 'Roboto Condensed', serif;
-  text-decoration: underline;
   text-align: center;
   font-size: 40px;
   font-style: italic;
@@ -70,22 +70,20 @@ h3 {
 
 }
 
-.form-header {
-  font-size: 2em;
-  padding-top: 20px;
-  text-decoration: underline;
-
-}
-
 form {
   width: 200px;
   margin: auto 0;
   display: inline-block; 
-  color: #BF0000;
 
 }
 
+form legend {
+  color: white;
+  
+}
+
 input {
+  font-size: 20px;
   margin-bottom: 1em;
   border: 1px solid red;
   width: 200px;
@@ -114,13 +112,14 @@ p {
 }
 
 a {
-  color:#EEC015;
+  color: black;
+  font-size: 1.5em;
 
 }
 
 span {
   color: #BF0000;
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: bold;
   font-family: 'Roboto Condensed', serif;
   text-transform: uppercase;
@@ -130,31 +129,25 @@ span {
 }
 
 .primary_content {
-  /* ROUNDED CORNERS */
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  /* DROP SHADOW */
-  -moz-box-shadow: 0px 0px 14px #000000;
-  -webkit-box-shadow: 0px 0px 14px #000000;
-  box-shadow: 0px 0px 14px #000000;
-  /* OTHER */
   background-color: white;
   background-size: cover;
   padding: 75px;
+  margin-top: 5px;
+  float: left;
 
 }
 
 .page {
-  margin: 0 auto 0 auto;
-  width: 900px;
+  margin: 0 auto;
+
 
 }
 
 .site_title {
   line-height: 15px;
-  padding-left: 40px;
   margin-top: -40px;
+  border-bottom: 2px solid black;
+
 
 }
 
@@ -173,8 +166,9 @@ span {
 
 .menu ul a {
   text-decoration: none;
-  margin-left: 20px;
+  padding-left: 10px;
   text-align: center;
+  font-weight: bold;
 
 }
 
@@ -192,7 +186,7 @@ span {
 /*Bio*/
 
 .bio_frame {
-  width: 50%;
+  width: 80%;
   margin: auto;
   margin-bottom: 10px;
   border: 4px solid #d7d7d7;
@@ -204,8 +198,9 @@ span {
 .about {
   margin: 0 auto;
   width: 750px;
-  height: 400px;
-  background-color: #141C22;
+  height: 475px;
+  background-color: #272822;
+  border-bottom: 5px solid #272822;
   
 }
 
@@ -221,7 +216,7 @@ p#thanks {
 
 .fs {
   width: 210px;
-  padding: 10px 15px 11px;
+  padding: 10px 15px 11px 10px;
   font-size: 18px;
   background-color: white;
   font-weight: bold;
@@ -236,6 +231,11 @@ p#thanks {
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
   -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 
+}
+
+.fs:hover {
+  background-color: #BF0000;
+  color: white;
 }
 
 img.bio_image {
@@ -264,14 +264,3 @@ p.author {
 
 }
 
-article.social_nav {
-  margin-top: -50px;
-
-}
-
-div.social_icons {
-  padding: 0 30px;
-  margin-left: 50px;
-  width: 1000px;
-  
-}

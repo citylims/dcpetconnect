@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141217194151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.text     "body",       null: false
     t.integer  "user_id"
     t.integer  "post_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20141217194151) do
     t.datetime "updated_at"
   end
 
-  create_table "pets", force: true do |t|
+  create_table "pets", force: :cascade do |t|
     t.text     "pet_name",   null: false
     t.text     "animal",     null: false
     t.text     "breed",      null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20141217194151) do
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.text     "body",       null: false
     t.text     "image"
     t.integer  "user_id"
@@ -42,16 +42,16 @@ ActiveRecord::Schema.define(version: 20141217194151) do
     t.datetime "updated_at"
   end
 
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.integer "post_id"
   end
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.text "body"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.text     "user_name",       null: false
     t.text     "email",           null: false
     t.text     "password_digest", null: false

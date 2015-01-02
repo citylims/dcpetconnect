@@ -39,7 +39,7 @@ end
 #USER ROUTES
 
 get '/' do
-	
+	@hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
   @front_page_pet = Pet.pluck(:image)
   @selected_pet = @front_page_pet.sample
 
@@ -75,6 +75,7 @@ end
 
 
 get '/signup' do 
+  @hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
   
   erb :signup
 end
@@ -270,13 +271,14 @@ end
 
 
 get '/hoods' do 
-	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth", "takoma"]
-	erb :hoods
+	@hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
+
+  erb :hoods
 end
 
 
 get "/hoods/:neighborhood" do 
-	@hoods = ["capitolhill", "clevelandwoodley", "glovergeorgetown", "mtpleasantcolumbiaheights", "dupontcircle", "shawbloomingdale", "tenleytown", "petworth", "takoma"]
+	@hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
 	@neighborhood = params[:neighborhood]
 
 	if @hoods.include?(@neighborhood)
@@ -304,10 +306,19 @@ post '/addcomment' do
 	redirect back
 end
 
-post "/addpost" do
+post '/addpost' do
 	@user_id = session[:user_id]
 	@new_post = params[:new_post]
 	@post_image = params[:post_image]
 	Post.create(body: @new_post, image: @post_image, user_id: @user_id)
 	redirect('/')
 end
+
+
+#Vendors
+
+get '/vendors' do
+  @user= User.find(session[:user_id])
+  erb :vendors
+end
+

@@ -10,16 +10,36 @@
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
     </nav>
-			<!-- users by hood -->
-		<ul> 
-			<% @neighborhood_pets.each do |pet| %>
-			<li>
-				<h3><%= pet.pet_name %></h3>
-				<h4><%= pet.breed %></h4>
-				<img class ="pet-image" src="<%= pet.image %>">
-			</li>
-			<% end %>
-		</ul>
+    <div class="left">
+			<ul> 
+				<% @neighborhood_pets.each do |pet| %>
+				<li>
+					<a href="/pets/<%= pet.pet_name %>"><h3><%= pet.pet_name %></h3></a>
+					<h4><%= pet.breed %></h4>
+					<img class ="pet-image" src="<%= pet.image %>">
+				</li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="sidebar">
+      <aside class="hoods-aside">
+        <h4>Vendors</h4>
+        <div id="map-canvas">
+        </div>
+        <h5><a href="/vendors">More...</a></h5>
+        <div class="side_image">
+          <img  src="http://i.imgur.com/d1cRSgA.gif">  
+        </div>
+        <h4>Get Invovled</h4>
+        <ul>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Adopt</a></li>
+          <li><a href="#">Volunteer</a></li>
+        </ul>
+        <h4>Coming Soon</h4>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Metrodorus monstret scientiam. Noster admirer canes admonere temeritas utinam plurimum primis invidiae, profecta astris vel desistemus cotidie mandaremus efficere, posuit</p>
+      </aside>
+    </div>
 	</div>
 </div>
 
