@@ -171,12 +171,12 @@ end
 get '/users/:alpha' do
   @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   @character = params[:alpha]
-  if @character.length > 1
-    @all_users = User.all
-  elsif 
-    @all_users = User.all
+  @array = []
+  users = User.all
+  users.each do |user|
+     @array << user.user_name
   end
-
+  @all_users = @array.sort
   erb :usersfind
 end   
 
