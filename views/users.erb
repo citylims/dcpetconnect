@@ -10,12 +10,19 @@
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
     </nav>
+    	<nav class="menu"> 
+	      <ul>
+	      	<% @alpha.each do |letter| %>
+		      <li class="user-alpha"><a href="/users/<%= letter %>"><%= letter %></a></li>
+		      <% end %>
+	      </ul>
+	    </nav>
     <div class="left">
 		  <div class="list-display">
 				<ul>
 					<% @all_users.each do |user| %>
 					<li>
-						<h3><a href="/users/<%= user.user_name %>"><%= user.user_name.capitalize %></a></h3>
+						<h3><a href="/user/<%= user.user_name %>"><%= user.user_name.capitalize %></a></h3>
 					</li>
 					<% end %>
 				</ul>

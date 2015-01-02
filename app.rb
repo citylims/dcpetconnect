@@ -159,11 +159,12 @@ end
 
 get '/users' do
   @all_users = User.all
+  @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   erb :users
 end
 
 
-get '/users/:user_name' do 
+get '/user/:user_name' do 
   @username = params[:user_name]		
   @current = User.find_by(user_name: @username)
   @current_id = @current.id
