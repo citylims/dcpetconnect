@@ -218,10 +218,10 @@ p#thanks {
   width: 210px;
   padding: 10px 15px 11px 10px;
   font-size: 18px;
-  background-color: #BF0000;
+  background-color: white;
   font-weight: bold;
   text-shadow: 1px 1px black;
-  color: white;
+  color: #BF0000;
   border-radius-right: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -234,8 +234,8 @@ p#thanks {
 }
 
 .fs:hover {
-  background-color: white;
-  color: #BF0000;
+  background-color: #BF0000;
+  color: white;
 }
 
 img.bio_image {
