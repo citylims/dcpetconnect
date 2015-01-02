@@ -319,6 +319,7 @@ footer p {
 
 .right {
   float: right ;
+
 }
 
 .list-display {
@@ -329,6 +330,7 @@ footer p {
 #map-canvas {
   width: 300px;
   height: 400px;
+
 }
 
 .about_me {
@@ -336,3 +338,16 @@ footer p {
   margin-bottom: 0px;
   color: white;
 }
+
+.user-alpha {
+  width: 700px;
+  border-bottom: 2px solid black;
+}
+
+
+.user-alpha li {
+  font-size: 10px;
+  display: inline;
+}
+
+

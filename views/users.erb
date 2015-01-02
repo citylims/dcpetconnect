@@ -10,10 +10,10 @@
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
     </nav>
-    	<nav class="menu"> 
+    	<nav class="user-alpha"> 
 	      <ul>
 	      	<% @alpha.each do |letter| %>
-		      <li class="user-alpha"><a href="/users/<%= letter %>"><%= letter %></a></li>
+		      <li><a href="/users/<%= letter %>"><%= letter %></a></li>
 		      <% end %>
 	      </ul>
 	    </nav>
