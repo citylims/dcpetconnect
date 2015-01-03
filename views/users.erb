@@ -31,7 +31,7 @@
 		<div class="sidebar">
       <aside class="hoods-aside">
         <h4>About Us</h4>
-        <form>
+        <form action="/user" method="get">
         <select name="neighborhood" placeholder="DC Neighborhoods">
 					  	<% @hoods.each do |hood| %>
 					  	<option value="<%= hood %>"><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></option>

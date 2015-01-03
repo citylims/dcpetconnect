@@ -182,6 +182,12 @@ get '/users/:alpha' do
   erb :usersfind
 end   
 
+get '/search' do
+  @neighborhood = params[:neighborhood]
+  redirect("/hoods/#{@neighborhood}")
+
+end
+
 
 
 get '/user/:user_name' do 
