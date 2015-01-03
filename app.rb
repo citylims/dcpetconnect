@@ -12,7 +12,7 @@ require_relative './models/tag'
 require_relative './models/tagging'
 require_relative './config/environments'
 
-# binding.pry
+binding.pry
 
 
 enable :sessions
@@ -252,7 +252,8 @@ post "/addpet" do
   @breed = params[:breed]
   @image = params[:image]
   @user_id = session[:user_id]
-	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, user_id: @user_id)
+  @neighborhood = params[:neighborhood]
+	Pet.create(pet_name: @pet_name, animal: @animal_type, breed: @breed, image: @image, neighborhood: @neighborhood, user_id: @user_id)
 	@username = User.find(@user_id)
 	redirect ('/users')
 end

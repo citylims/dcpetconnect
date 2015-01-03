@@ -25,6 +25,7 @@
           <input type="text" placeholder="Breed" name="breed">
           <legend>Picture Url</legend>
           <input type="text" placeholder="url" name="image">
+          <input type="hidden" value="<%= @current_user.neighborhood %>"  name="neighborhood">
           <input class = "fs" type="submit" placeholder="Log In">
         </form>
       </div>

@@ -4,7 +4,8 @@ class CreatePets < ActiveRecord::Migration
   	  t.text :pet_name, null: false
   	  t.text :animal, null: false
   	  t.text :breed, null: false
-  	  t.text :image
+  	  t.text :neighborhood, null: false
+      t.text :image
   	  t.belongs_to :user
   	  t.timestamps
   	end
