@@ -170,7 +170,7 @@ aside a {
 }
 
 aside h4 {
-  color: #191970;
+  color: #BF0000;
   text-align: left;
   border-bottom: 1px solid black;
 
@@ -205,10 +205,21 @@ aside h4 {
   padding: .5em;
 }
 
-.sidebar li a {
-  text-decoration: none;
-  color: #dd0000;
+.sidebar ul li {
+  display: inline;
 
+}
+
+.sidebar li a {
+  font-size: 16px;
+  text-decoration: none;
+  padding-right: 10px;
+  color: #002C77;
+
+}
+
+.sidebar li a:hover {
+  text-decoration: underline;
 }
 
 .sidebar p {
