@@ -31,6 +31,16 @@
 		<div class="sidebar">
       <aside class="hoods-aside">
         <h4>About Us</h4>
+        <form>
+        <select name="neighborhood" placeholder="DC Neighborhoods">
+					  	<% @hoods.each do |hood| %>
+					  	<option value="<%= hood %>"><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></option>
+					  	<% end %>
+					  </select>
+						<br>
+						<br>
+					  <input type="submit">
+			 		</form>
         <p>neque tale monstret optimus divitiarum nacti tempora, eorumque desideraret malunt debilitatem pariant afranius depravatum restat contemnentes honestatis.</p>
         <h5><a href="#">More...</a></h5>
         <div class="side_image">
