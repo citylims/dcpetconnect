@@ -10,6 +10,12 @@
 	      <li><img class = "rotate" src="http://i.imgur.com/lGeudO8.png"><a href="/">CONNECT</a></li>
       </ul>
     </nav>
+    <nav class="user-alpha"> 
+      <ul>
+        <li><a href="/hoods/<%=params[:neighborhood] %>/users">Users</a></li>
+        <li><a href="/hoods/<%=params[:neighborhood] %>/pets">Pets</a></li>
+      </ul>
+    </nav>   
     <div class="left">
 			<ul> 
 				<% @neighborhood_pets.each do |pet| %>

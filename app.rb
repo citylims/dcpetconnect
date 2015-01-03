@@ -12,7 +12,7 @@ require_relative './models/tag'
 require_relative './models/tagging'
 require_relative './config/environments'
 
-binding.pry
+# binding.pry
 
 
 enable :sessions
@@ -322,6 +322,24 @@ get "/hoods/:neighborhood" do
 	erb :neighborhood
 end
 
+
+
+get '/hoods/:neighborhood/users' do
+  # @all_users = User.all
+  @neighborhood = params[:neighborhood]
+  @array = []
+  users = User.where(neighborhood: @neighborhood)
+  users.each do |user|
+     @array << user.user_name
+  end
+  @all_users = @array.sort
+  
+  erb :hoodusers
+end
+
+get '/hoods/:neighborhood/pets' do
+
+end
 
 #Comments 
 
