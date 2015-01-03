@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20141217194151) do
   end
 
   create_table "pets", force: :cascade do |t|
-    t.text     "pet_name",   null: false
-    t.text     "animal",     null: false
-    t.text     "breed",      null: false
+    t.text     "pet_name",     null: false
+    t.text     "animal",       null: false
+    t.text     "breed",        null: false
+    t.text     "neighborhood", null: false
     t.text     "image"
     t.integer  "user_id"
     t.datetime "created_at"
