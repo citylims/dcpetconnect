@@ -25,12 +25,13 @@
 
 .profile-name {
   color: black;
+  margin-top: -10px;
 
 }
 
 .profile-hood {
   margin-top: -60px;
-  color: #191970;
+  color: black;
 
 }
 
