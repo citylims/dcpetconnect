@@ -35,6 +35,11 @@ before do
   @current_user = User.find_by(id: session[:user_id])
 end
 
+class String
+  def initial
+    self[0,1]
+  end
+end
 
 #USER ROUTES
 
@@ -159,11 +164,33 @@ end
 
 get '/users' do
   @all_users = User.all
+  @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  @hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
   erb :users
 end
 
+get '/users/:alpha' do
+  @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  @hoods = ["CapitolHill", "ClevelandWoodley", "GloverGeorgetown", "MtPleasantColumbiaHeights", "DupontCircle", "ShawBloomingdale", "Tenleytown", "Petworth", "Takoma"]
+  @character = params[:alpha]
+  @array = []
+  users = User.all
+  users.each do |user|
+     @array << user.user_name
+  end
+  @all_users = @array.sort
+  erb :usersfind
+end   
 
-get '/users/:user_name' do 
+get '/search' do
+  @neighborhood = params[:neighborhood]
+  redirect("/hoods/#{@neighborhood}")
+
+end
+
+
+
+get '/user/:user_name' do 
   @username = params[:user_name]		
   @current = User.find_by(user_name: @username)
   @current_id = @current.id
