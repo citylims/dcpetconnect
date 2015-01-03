@@ -21,7 +21,7 @@
 		  <div class="list-display">
 				<ul>
 					<% @all_users.each do |user| %>
-					<% if @character.length > 1 %>
+					<% if @character == "All" %>
 					<li><h4><a href="/user/<%= user %>"><%= user.capitalize %></a></h4></li>
 					<% elsif user.initial == @character %>
 					<h4><a href="/user/<%= user %>"><%= user.capitalize %></a></h4></li>
