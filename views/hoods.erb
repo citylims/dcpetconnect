@@ -11,13 +11,15 @@
       </ul>
     </nav>
     <div class="left">
-    <ul> 
-    	<% @hoods.each do |hood| %>
-    	<li>
-    		<a href="hoods/<%= hood %>"><p><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></p><a>
-			</li>
-    	<% end %>
-    </ul>
+      <div class="list-display">
+        <ul> 
+        	<% @hoods.each do |hood| %>
+        	<li>
+            <h4><a href="hoods/<%= hood %>"><%= hood.gsub(/(?<=[a-z])(?=[A-Z])/, ' ') %></h4></a>
+          </li>
+        	<% end %>
+        </ul>
+      </div>
    	</div> <!-- left -->
     <div class="sidebar">
       <aside class="hoods-aside">
