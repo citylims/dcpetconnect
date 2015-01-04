@@ -44,7 +44,7 @@ end
 #USER ROUTES
 
 get '/' do
-	@hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark" "Georgetown", "Glover Park" "ColumbiaHeights", "MtPleasant" "DupontCircle", "Shaw", "Bloomingdale" "Tenleytown", "Petworth", "Takoma"]
+	@hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark", "Georgetown", "Glover Park", "ColumbiaHeights", "MtPleasant", "DupontCircle", "Shaw", "Bloomingdale", "Tenleytown", "Petworth", "Takoma"]
   @front_page_pet = Pet.pluck(:image)
   @selected_pet = @front_page_pet.sample
 
@@ -80,7 +80,7 @@ end
 
 
 get '/signup' do 
-  @hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark" "Georgetown", "Glover Park" "ColumbiaHeights", "MtPleasant" "DupontCircle", "Shaw", "Bloomingdale" "Tenleytown", "Petworth", "Takoma"]
+  @hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark", "Georgetown", "Glover Park", "ColumbiaHeights", "MtPleasant", "DupontCircle", "Shaw", "Bloomingdale", "Tenleytown", "Petworth", "Takoma"]
   
   erb :signup
 end
@@ -165,13 +165,13 @@ end
 get '/users' do
   @all_users = User.all
   @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-  @hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark" "Georgetown", "Glover Park" "ColumbiaHeights", "MtPleasant" "DupontCircle", "Shaw", "Bloomingdale" "Tenleytown", "Petworth", "Takoma"]
+  @hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark", "Georgetown", "Glover Park", "ColumbiaHeights", "MtPleasant", "DupontCircle", "Shaw", "Bloomingdale", "Tenleytown", "Petworth", "Takoma"]
   erb :users
 end
 
 get '/users/:alpha' do
   @alpha = ["All","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-  @hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark" "Georgetown", "Glover Park" "ColumbiaHeights", "MtPleasant" "DupontCircle", "Shaw", "Bloomingdale" "Tenleytown", "Petworth", "Takoma"]
+  @hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark", "Georgetown", "Glover Park", "ColumbiaHeights", "MtPleasant", "DupontCircle", "Shaw", "Bloomingdale", "Tenleytown", "Petworth", "Takoma"]
   @character = params[:alpha]
   @array = []
   users = User.all
@@ -299,14 +299,14 @@ end
 
 
 get '/hoods' do 
-	@hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark" "Georgetown", "Glover Park" "ColumbiaHeights", "MtPleasant" "DupontCircle", "Shaw", "Bloomingdale" "Tenleytown", "Petworth", "Takoma"]
+	@hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark", "Georgetown", "Glover Park", "ColumbiaHeights", "MtPleasant", "DupontCircle", "Shaw", "Bloomingdale", "Tenleytown", "Petworth", "Takoma"]
 
   erb :hoods
 end
 
 
 get "/hoods/:neighborhood" do 
-	@hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark" "Georgetown", "Glover Park" "ColumbiaHeights", "MtPleasant" "DupontCircle", "Shaw", "Bloomingdale" "Tenleytown", "Petworth", "Takoma"]
+	@hoods = ["CapitolHill", "ClevelandPark", "WoodleyPark", "Georgetown", "Glover Park", "ColumbiaHeights", "MtPleasant", "DupontCircle", "Shaw", "Bloomingdale", "Tenleytown", "Petworth", "Takoma"]
 	@neighborhood = params[:neighborhood]
 
 	if @hoods.include?(@neighborhood)
