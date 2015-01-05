@@ -14,6 +14,4 @@ class User < ActiveRecord::Base
   end
 end
 
-   def initial
-    self[0,1]
-  end
+  
