@@ -1,7 +1,7 @@
 /*Global selectors*/
 body {
   font-family: 'Merriweather', Georgia, serif;
-  background-color: black;
+  background-color: #ddd;
   overflow-y: auto;
   overflow-x: hidden;
   max-width: 1500px
@@ -9,10 +9,10 @@ body {
 }
 
 section {
-  text-align: center; 
+  text-align: center;
   position: relative;
   display: block;
-  background: rgb(240,249,255); 
+  background: rgb(240,249,255);
   background: -moz-linear-gradient(top,  rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,249,255,1)), color-stop(47%,rgba(203,235,255,1)), color-stop(100%,rgba(161,219,255,1))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -73,13 +73,13 @@ h3 {
 form {
   width: 200px;
   margin: auto 0;
-  display: inline-block; 
+  display: inline-block;
 
 }
 
 form legend {
   color: white;
-  
+
 }
 
 input {
@@ -155,7 +155,7 @@ span {
 
 .menu {
   width: 700px;
-  
+
 }
 
 .menu li {
@@ -201,7 +201,7 @@ span {
   height: 475px;
   background-color: #272822;
   border-bottom: 5px solid #272822;
-  
+
 }
 
 p#thanks {
@@ -263,4 +263,3 @@ p.author {
   color: #BF0000;
 
 }
-
