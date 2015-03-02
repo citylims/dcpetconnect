@@ -151,7 +151,6 @@ get '/users/:alpha' do
   @character = params[:alpha]
   @array = []
   users = User.all
-  #try using .order
   users.each do |user|
      @array << user.user_name
   end
