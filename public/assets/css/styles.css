@@ -57,7 +57,7 @@
 }
 
 .signup {
-  text-align:  center;
+  text-align: center;
   width: 550px;
   height: 500px;
   background-color: #141C22;
@@ -179,7 +179,6 @@ aside h4 {
 
 .sidebar ul li {
   display: inline;
-
 }
 
 .sidebar li a {
@@ -309,7 +308,6 @@ footer p {
   width: 700px;
   border-bottom: 2px solid black;
 }
-
 
 .user-alpha li {
   font-size: 10px;
