@@ -1,7 +1,7 @@
 /*Global selectors*/
 body {
   font-family: 'Merriweather', Georgia, serif;
-  background-color: #ddd;
+  background-color: #F3F4EF;
   overflow-y: auto;
   overflow-x: hidden;
   max-width: 1500px
@@ -114,7 +114,7 @@ span {
 }
 
 .primary_content {
-  background-color: #ddd;
+  background-color: #F3F4EF;
   background-size: cover;
   padding: 75px;
   margin-top: 5px;
